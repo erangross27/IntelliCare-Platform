@@ -1,4 +1,16 @@
+## 📸 **Platform Screenshots**
+
+### 🏠 **Main Dashboard**
 <div align="center">
+  <img src="assets/screenshots/dashboard.png" alt="IntelliCare Dashboard" width="800"/>
+  <p><em>Professional healthcare interface with personalized doctor dashboard</em></p>
+</div>
+
+### 🤖 **AI Diagnosis Interface**
+<div align="center">
+  <img src="assets/screenshots/ai-diagnosis.png" alt="AI Diagnosis Interface" width="800"/>  
+  <p><em>Comprehensive patient assessment with AI-powered diagnostic assistance</em></p>
+</div>
   
   <!-- Animated Header -->
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=150&section=header&text=IntelliCare&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Next-Generation%20Medical%20AI%20Platform&descAlignY=55&descSize=20" width="100%"/>
