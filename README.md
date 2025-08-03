@@ -2,6 +2,11 @@
 
 ### 🏠 **Main Dashboard**
 <div align="center">
+  <img src="assets/screenshots/homepage.png" alt="IntelliCare Homepage" width="800"/>
+  <p><em>Professional healthcare Platoform with AI agent</em></p>
+</div>
+
+<div align="center">
   <img src="assets/screenshots/dashboard.png" alt="IntelliCare Dashboard" width="800"/>
   <p><em>Professional healthcare interface with personalized doctor dashboard</em></p>
 </div>
