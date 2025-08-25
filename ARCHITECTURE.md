@@ -1,4 +1,4 @@
-# 🏗️ IntelliCare System Architecture
+# 💬 IntelliCare Agent-First Chat Architecture
 
 <div align="center">
   <img src="https://img.shields.io/badge/🏗️-Enterprise%20Architecture-blue?style=for-the-badge" alt="Enterprise Architecture"/>
@@ -10,49 +10,51 @@
 
 ## 🎯 **Architecture Overview**
 
-IntelliCare employs a **modern, scalable microservices architecture** designed specifically for healthcare applications, ensuring security, reliability, and performance at enterprise scale.
+IntelliCare employs an **agent-first conversational architecture** where specialized medical AI agents deliver healthcare through intelligent chat interactions, ensuring secure, reliable, and personalized medical conversations at scale.
 
 ## 📊 **System Architecture Diagram**
 
 ```mermaid
 graph TB
-    subgraph "Client Layer"
-        A[Web Frontend - React]
-        B[Mobile Apps - React Native]
-        C[Desktop Apps - Electron]
+    subgraph "Chat Interface Layer"
+        A[Web Chat UI - React]
+        B[Mobile Chat - React Native]
+        C[API Chat Interface]
     end
     
-    subgraph "API Gateway Layer"
-        D[Load Balancer - Nginx]
-        E[API Gateway - Express.js]
-        F[Authentication Service - JWT]
+    subgraph "Real-time Communication Layer"
+        D[WebSocket Gateway]
+        E[Message Router]
+        F[Session Manager]
     end
     
-    subgraph "Core Services Layer"
-        G[Patient Management Service]
-        H[User Management Service]
-        I[Diagnostic Service]
-        J[Notification Service]
+    subgraph "Agent Orchestration Layer"
+        G[Agent Orchestrator]
+        H[Primary Care Agent]
+        I[Specialist Agent]
+        J[Emergency Agent]
+        K[Pharmacy Agent]
+        L[Wellness Agent]
     end
     
     subgraph "AI Processing Layer"
-        K[AI Orchestrator]
-        L[MediPhi Microservice]
-        M[Hugging Face Models]
-        N[Model Management Service]
+        M[LLM Router]
+        N[Medical Language Models]
+        O[Context Manager]
+        P[Memory Store]
     end
     
     subgraph "Data Layer"
-        O[(MongoDB - Patient Data)]
-        P[(MongoDB - User Data)]
-        Q[(Redis - Session Cache)]
-        R[(File Storage - AWS S3)]
+        Q[(MongoDB - Conversations)]
+        R[(MongoDB - User Profiles)]
+        S[(Redis - Active Sessions)]
+        T[(Vector DB - Medical Knowledge)]
     end
     
-    subgraph "External Integrations"
-        S[Healthcare APIs]
-        T[Medical Databases]
-        U[Compliance Services]
+    subgraph "Healthcare Integrations"
+        U[EHR Systems]
+        V[Medical APIs]
+        W[Compliance Services]
     end
     
     A --> D
@@ -60,27 +62,32 @@ graph TB
     C --> D
     D --> E
     E --> F
-    F --> G
-    F --> H
-    F --> I
-    F --> J
-    I --> K
-    K --> L
+    E --> G
+    G --> H
+    G --> I
+    G --> J
+    G --> K
+    G --> L
+    H --> M
+    I --> M
+    J --> M
     K --> M
-    K --> N
-    G --> O
-    H --> P
-    F --> Q
-    L --> R
-    E --> S
-    E --> T
-    E --> U
+    L --> M
+    M --> N
+    M --> O
+    O --> P
+    G --> Q
+    F --> R
+    F --> S
+    N --> T
+    G --> U
+    G --> V
+    G --> W
     
     style A fill:#61DAFB
-    style E fill:#68A063
-    style K fill:#FF6B6B
-    style L fill:#4ECDC4
-    style O fill:#47A248
+    style G fill:#FF6B6B
+    style M fill:#4ECDC4
+    style Q fill:#47A248
 ```
 
 ---
@@ -88,11 +95,11 @@ graph TB
 ## 🏛️ **Architecture Principles**
 
 ### 🎯 **Design Philosophy**
-- **Security First** - Every component designed with healthcare security in mind
-- **Scalability by Design** - Horizontal scaling capabilities from day one
-- **Microservices Architecture** - Independent, loosely coupled services
-- **API-First Approach** - All functionality exposed through well-defined APIs
-- **Cloud-Native** - Built for modern cloud infrastructure
+- **Conversation First** - Every interaction is a natural medical conversation
+- **Agent Intelligence** - Specialized agents for different medical domains
+- **Context Awareness** - Agents maintain conversation history and medical context
+- **Real-time Chat** - WebSocket-based instant messaging architecture
+- **Personalized Experience** - Agents learn and adapt to individual patients
 
 ### 🔒 **Security Principles**
 - **Zero Trust Architecture** - Verify every request, trust nothing by default
@@ -107,13 +114,13 @@ graph TB
 
 ### 📱 **Client Applications**
 
-#### **Web Application (React)**
+#### **Chat Application (React)**
 - **Framework:** React 18+ with TypeScript
-- **State Management:** Context API with custom hooks
-- **Styling:** Tailwind CSS for responsive design
-- **Routing:** React Router for single-page application navigation
-- **Authentication:** JWT token-based authentication
-- **API Communication:** Axios with interceptors for error handling
+- **Chat UI:** Custom chat components with rich message formatting
+- **Real-time:** WebSocket client for instant messaging
+- **Message Types:** Text, voice, images, medical documents
+- **Agent Avatars:** Visual representation of different medical agents
+- **Chat History:** Persistent conversation threads with search
 
 #### **Progressive Web App (PWA)**
 - **Service Workers** - Offline functionality and caching
@@ -121,19 +128,19 @@ graph TB
 - **Push Notifications** - Real-time diagnostic alerts
 - **Local Storage** - Secure client-side data persistence
 
-### 🎨 **UI/UX Architecture**
+### 💬 **Chat UI Architecture**
 ```
 src/
-├── components/           # Reusable UI components
-│   ├── common/          # Generic components (buttons, forms, etc.)
-│   ├── medical/         # Medical-specific components
-│   └── charts/          # Data visualization components
-├── pages/               # Application pages/views
-├── hooks/               # Custom React hooks
-├── context/             # Global state management
-├── services/            # API communication layer
-├── utils/               # Utility functions
-└── styles/              # Global styles and themes
+├── components/           # Chat UI components
+│   ├── chat/            # Chat interface components
+│   ├── agents/          # Agent avatar and presence
+│   ├── messages/        # Message types and formatting
+│   └── inputs/          # Chat input components
+├── agents/              # Agent definitions and logic
+├── conversations/       # Conversation management
+├── websocket/           # Real-time communication
+├── context/             # Chat state management
+└── utils/               # Chat utilities
 ```
 
 ---
@@ -148,96 +155,102 @@ src/
 - **Rate Limiting** - DDoS protection and API throttling
 - **Health Checks** - Automatic unhealthy instance removal
 
-#### **API Gateway (Express.js)**
-- **Request Validation** - Input sanitization and validation
-- **Authentication Middleware** - JWT token verification
-- **CORS Handling** - Cross-origin request management
-- **Request/Response Logging** - Comprehensive audit trails
-- **Error Handling** - Centralized error management
+#### **WebSocket Gateway**
+- **Real-time Messaging** - Instant bidirectional communication
+- **Agent Routing** - Intelligent routing to specialized agents
+- **Message Queue** - Reliable message delivery and ordering
+- **Presence Management** - Agent availability and status
+- **Session Persistence** - Conversation continuity across connections
 
 ### 🔧 **Core Services**
 
-#### **Authentication Service**
+#### **Chat Authentication**
 ```typescript
-Interface: AuthenticationService
-├── User Registration & Login
-├── JWT Token Management
-├── Password Security (bcrypt)
-├── Session Management
-├── Role-Based Access Control (RBAC)
-└── Multi-Factor Authentication (MFA)
+Interface: ChatAuthService
+├── Chat Session Creation
+├── Anonymous Chat Support
+├── Registered User Chat
+├── Agent Authentication
+├── Conversation Encryption
+└── Privacy Controls
 ```
 
-#### **Patient Management Service**
+#### **Conversation Management**
 ```typescript
-Interface: PatientService
-├── Patient CRUD Operations
-├── Medical History Management
-├── Diagnostic Record Storage
-├── Privacy Controls
-├── Data Anonymization
-└── Export/Import Capabilities
+Interface: ConversationService
+├── Chat Thread Management
+├── Message History Storage
+├── Context Preservation
+├── Agent Handoff Logic
+├── Conversation Analytics
+└── Chat Export/Archive
 ```
 
-#### **Diagnostic Service**
+#### **Agent Services**
 ```typescript
-Interface: DiagnosticService
-├── Symptom Processing
-├── AI Model Orchestration
-├── Result Aggregation
-├── Confidence Scoring
-├── Treatment Recommendations
-└── Risk Assessment
+Interface: AgentService
+├── Agent Orchestration
+├── Intent Recognition
+├── Response Generation
+├── Context Management
+├── Agent Specialization
+└── Learning & Adaptation
 ```
 
 ---
 
 ## 🤖 **AI Processing Architecture**
 
-### 🧠 **AI Orchestration Layer**
+### 🤖 **Agent Orchestration Layer**
 
-#### **Model Management**
-- **Model Registry** - Centralized AI model management
-- **Version Control** - AI model versioning and rollback
-- **A/B Testing** - Comparative model performance testing  
-- **Load Balancing** - Intelligent request distribution across models
-- **Performance Monitoring** - Real-time model performance metrics
+#### **Agent Management**
+- **Agent Registry** - Catalog of specialized medical agents
+- **Agent Routing** - Intent-based agent selection
+- **Multi-Agent Collaboration** - Agents working together on complex cases
+- **Agent Learning** - Continuous improvement from conversations
+- **Performance Tracking** - Agent effectiveness metrics
 
-#### **Processing Pipeline**
+#### **Conversation Flow**
 ```python
-AI Processing Flow:
-1. Input Validation & Sanitization
-2. Medical Context Extraction
-3. Model Selection & Routing
-4. Parallel Model Execution
-5. Result Aggregation & Scoring
-6. Confidence Assessment
-7. Response Formatting
-8. Audit Logging
+Agent Conversation Flow:
+1. Message Reception
+2. Intent Classification
+3. Agent Selection
+4. Context Retrieval
+5. Response Generation
+6. Medical Validation
+7. Message Delivery
+8. Conversation Update
 ```
 
 ### 🔬 **Medical AI Models**
 
-#### **Microsoft MediPhi Integration**
-- **Dedicated Microservice** - Isolated Python Flask service
-- **WSGI Server** - Production-ready Waitress server
-- **Model Caching** - Optimized model loading and caching
-- **Batch Processing** - Efficient batch diagnostic processing
-- **Resource Management** - Memory and CPU optimization
+#### **Medical Agent Types**
+- **Primary Care Agent** - General health consultations
+- **Specialist Agents** - Cardiology, neurology, pediatrics, etc.
+- **Emergency Triage Agent** - Urgent care assessment
+- **Medication Agent** - Drug information and interactions
+- **Mental Health Agent** - Psychological support and guidance
 
-#### **Multi-Model Support**
+#### **Agent Capabilities**
 ```yaml
-Supported Models:
-  Primary:
-    - Microsoft MediPhi (Primary diagnostic model)
+Agent Features:
+  Conversation:
+    - Natural language understanding
+    - Medical terminology recognition
+    - Empathetic responses
+    - Multi-turn dialogue
   
-  Secondary:
-    - Meditron-7B (Open-source medical model)
-    - DoctorGLM-6B (Multilingual medical consultation)
-    - BioMistral-7B (Biomedical language model)
+  Medical:
+    - Symptom assessment
+    - Risk evaluation
+    - Treatment suggestions
+    - Medication guidance
   
-  Specialized:
-    - Custom Models (Domain-specific implementations)
+  Personalization:
+    - Patient history awareness
+    - Preference learning
+    - Adaptive communication style
 ```
 
 ---
@@ -250,47 +263,46 @@ Supported Models:
 ```javascript
 Database: intellicare
 ├── users                 // User accounts and profiles
-├── patients             // Patient records and information  
-├── diagnoses            // Diagnostic sessions and results
-├── medical_history      // Patient medical history
-├── audit_logs          // System activity audit trail
-└── system_config       // Application configuration
+├── conversations        // Chat threads and messages
+├── agents               // Agent configurations
+├── contexts             // Conversation contexts
+├── intents              // Recognized intents
+└── analytics            // Chat analytics and metrics
 ```
 
 #### **Data Models**
 ```typescript
-// Core Data Entities
+// Core Chat Entities
 User {
   _id: ObjectId
   name: string
   email: string (encrypted)
-  passwordHash: string
-  role: UserRole
-  permissions: Permission[]
+  chatPreferences: ChatPreferences
+  conversationHistory: ObjectId[]
   createdAt: Date
-  lastLogin: Date
+  lastActive: Date
 }
 
-Patient {
+Conversation {
   _id: ObjectId
   userId: ObjectId
-  personalInfo: EncryptedPersonalInfo
-  medicalHistory: MedicalRecord[]
-  diagnoses: DiagnosisSession[]
-  privacy: PrivacySettings
+  messages: Message[]
+  activeAgents: Agent[]
+  context: ConversationContext
+  status: ConversationStatus
   createdAt: Date
   updatedAt: Date
 }
 
-DiagnosisSession {
+Message {
   _id: ObjectId
-  patientId: ObjectId
-  symptoms: string[]
-  aiModelsUsed: string[]
-  results: DiagnosisResult[]
-  confidence: number
-  riskLevel: RiskLevel
-  recommendations: string[]
+  conversationId: ObjectId
+  sender: SenderType // User or Agent
+  agentId?: ObjectId
+  content: string
+  attachments?: Attachment[]
+  intent?: RecognizedIntent
+  medicalContext?: MedicalContext
   timestamp: Date
 }
 ```
@@ -298,10 +310,11 @@ DiagnosisSession {
 ### 🔄 **Caching Strategy**
 
 #### **Redis Implementation**
-- **Session Storage** - User session and authentication tokens
-- **API Response Caching** - Frequently accessed data caching
-- **Rate Limiting** - API request throttling and monitoring
-- **Real-time Data** - Live diagnostic sessions and notifications
+- **Active Chats** - Real-time conversation state
+- **Agent Availability** - Online agent status and queue
+- **Message Queue** - Reliable message delivery
+- **Typing Indicators** - Real-time user activity
+- **Conversation Cache** - Recent message history
 
 ---
 
@@ -520,8 +533,8 @@ Integrations:
 
 <div align="center">
   
-  **🏗️ IntelliCare Architecture - Built for Scale, Security, and Innovation**
+  **💬 IntelliCare Architecture - Agent-First Conversational Healthcare**
   
-  *Enterprise-grade medical AI platform architecture designed for the future of healthcare* 🚀
+  *Revolutionary medical chat platform where intelligent agents deliver personalized healthcare through natural conversation* 🤖
   
 </div>

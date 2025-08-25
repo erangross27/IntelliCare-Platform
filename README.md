@@ -1,28 +1,28 @@
 ## 📸 **Platform Screenshots**
 
-### 🏠 **Main Dashboard**
+### 💬 **Agent-First Chat Interface**
 <div align="center">
-  <img src="assets/screenshots/HomePage.png" alt="IntelliCare Homepage" width="800"/>
-  <p><em>Professional healthcare Platform with AI agent</em></p>
+  <img src="assets/screenshots/HomePage.png" alt="IntelliCare Chat Interface" width="800"/>
+  <p><em>Intelligent medical AI agents providing real-time healthcare assistance</em></p>
 </div>
 
 <div align="center">
-  <img src="assets/screenshots/Dashboard.png" alt="IntelliCare Dashboard" width="800"/>
-  <p><em>Professional healthcare interface with personalized doctor dashboard</em></p>
+  <img src="assets/screenshots/Dashboard.png" alt="IntelliCare Agent Dashboard" width="800"/>
+  <p><em>Multi-agent healthcare platform with specialized medical AI assistants</em></p>
 </div>
 
-### 🤖 **AI Diagnosis Interface**
+### 🤖 **AI Medical Chat Experience**
 <div align="center">
-  <img src="assets/screenshots/ai-diagnosis.png" alt="AI Diagnosis Interface" width="800"/>  
-  <p><em>Comprehensive patient assessment with AI-powered diagnostic assistance</em></p>
+  <img src="assets/screenshots/ai-diagnosis.png" alt="AI Chat Diagnosis" width="800"/>  
+  <p><em>Conversational AI agents providing instant medical consultations and diagnostic support</em></p>
 </div>
   
   <!-- Animated Header -->
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=150&section=header&text=IntelliCare&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Next-Generation%20Medical%20AI%20Platform&descAlignY=55&descSize=20" width="100%"/>
   
-  # 🏥 IntelliCare - Intelligent Medical AI Platform
+  # 💬 IntelliCare - Agent-First Medical AI Chat Platform
   
-  ### 🤖 *Revolutionizing Healthcare with Advanced AI Diagnostics*
+  ### 🤖 *Revolutionizing Healthcare Through Intelligent Conversational AI Agents*
   
   <!-- Status Badges -->
   <p>
@@ -40,7 +40,7 @@
   
   ---
   
-  **🌟 A cutting-edge medical AI platform that leverages advanced machine learning models to provide intelligent diagnostic assistance, revolutionizing healthcare delivery through artificial intelligence.**
+  **🌟 An agent-first medical chat application where intelligent AI agents provide instant healthcare consultations, diagnostic assistance, and personalized medical guidance through natural conversation.**
   
   *Currently in active development - Building the future of medical AI* ⚡
   
@@ -48,7 +48,7 @@
 
 ## 🚀 **Project Vision**
 
-IntelliCare represents the next generation of medical AI platforms, designed to empower healthcare professionals with advanced diagnostic capabilities and intelligent patient management tools.
+IntelliCare is pioneering the future of healthcare as an agent-first chat application where patients and healthcare providers interact with specialized medical AI agents. Our conversational AI platform transforms medical consultations into intelligent, accessible, and immediate healthcare experiences.
 
 ## ✨ **Key Innovations**
 
@@ -56,20 +56,20 @@ IntelliCare represents the next generation of medical AI platforms, designed to 
 <tr>
 <td width="50%">
 
-### 🧠 **Advanced AI Engine**
-- **Multi-Model Integration** - Supports various state-of-the-art medical AI models
-- **Microsoft MediPhi Integration** - Leveraging cutting-edge medical language models
-- **Confidence Scoring** - Provides reliability metrics for each diagnosis
-- **Real-time Processing** - Instant diagnostic suggestions
+### 🧠 **Intelligent Agent System**
+- **Multi-Agent Architecture** - Specialized medical AI agents for different healthcare needs
+- **Conversational AI** - Natural language understanding for medical consultations
+- **Context-Aware Responses** - Agents maintain conversation history and medical context
+- **Real-time Chat** - Instant medical guidance through intelligent dialogue
 
 </td>
 <td width="50%">
 
-### 🏗️ **Enterprise Architecture**
-- **Microservices Design** - Scalable and maintainable architecture
-- **RESTful API** - Modern API-first approach
-- **Security First** - HIPAA-compliant data handling
-- **Cross-Platform** - Web-based responsive interface
+### 🏗️ **Agent-First Architecture**
+- **Agent Orchestration** - Intelligent routing to specialized medical agents
+- **Chat-First API** - WebSocket-based real-time messaging
+- **Secure Conversations** - HIPAA-compliant chat encryption
+- **Omnichannel Support** - Chat available across web, mobile, and API
 
 </td>
 </tr>
@@ -77,17 +77,17 @@ IntelliCare represents the next generation of medical AI platforms, designed to 
 
 ## 🎯 **Core Capabilities**
 
-### 🏥 **Medical Intelligence**
-- **🤖 AI-Powered Diagnostics** - Advanced symptom analysis and diagnostic suggestions
-- **📊 Risk Assessment** - Automated patient risk stratification (LOW/MEDIUM/HIGH)
-- **💊 Treatment Recommendations** - Evidence-based treatment suggestions
-- **📈 Clinical Decision Support** - Data-driven medical insights
+### 💬 **Intelligent Medical Agents**
+- **🤖 Diagnostic Agent** - Conversational symptom analysis and medical assessment
+- **👨‍⚕️ Consultation Agent** - Virtual doctor providing personalized medical advice
+- **💊 Medication Agent** - Drug interaction checks and prescription guidance
+- **🏥 Triage Agent** - Emergency assessment and care routing through chat
 
-### 👨‍⚕️ **Healthcare Management**
-- **👤 Patient Management** - Comprehensive patient record system
-- **📋 Medical History** - Detailed patient history tracking and analysis
-- **🔐 Secure Authentication** - Healthcare-grade security and access control
-- **📱 Responsive Design** - Works seamlessly across all devices
+### 🗨️ **Chat-Driven Healthcare**
+- **💬 Continuous Conversations** - Persistent chat history with medical context
+- **🤝 Agent Handoffs** - Seamless transitions between specialized agents
+- **📱 Multi-Channel Chat** - Consistent experience across all platforms
+- **🔔 Proactive Health Alerts** - Agents initiate preventive care conversations
 
 ## 🏗️ **Technology Stack**
 
@@ -110,47 +110,51 @@ IntelliCare represents the next generation of medical AI platforms, designed to 
 
 </div>
 
-## 🔬 **AI Models Integration**
+## 🤖 **Medical AI Agents**
 
-IntelliCare integrates with multiple state-of-the-art medical AI models:
+IntelliCare's specialized agents powered by state-of-the-art models:
 
-- **🧠 Microsoft MediPhi** - Advanced medical language understanding
-- **⚕️ Meditron-7B** - Open-source medical diagnostics model
-- **🌏 DoctorGLM-6B** - Multilingual medical consultation model
-- **🔬 BioMistral-7B** - Specialized biomedical language model
+- **💬 Primary Care Agent** - General health consultations and routine care
+- **🧠 Specialist Agent** - Deep expertise in specific medical domains
+- **🚨 Emergency Agent** - Urgent care assessment and triage
+- **💊 Pharmacy Agent** - Medication management and drug information
+- **🧘 Wellness Agent** - Preventive care and lifestyle guidance
 
 ## 📊 **Platform Architecture**
 
 ```mermaid
 graph TB
-    A[Web Frontend - React] --> B[API Gateway - Express.js]
-    B --> C[Authentication Service]
-    B --> D[Patient Management Service]
-    B --> E[AI Diagnosis Microservice]
-    E --> F[Microsoft MediPhi Model]
-    E --> G[Hugging Face Models]
-    B --> H[Database - MongoDB]
+    A[Chat Interface - React] --> B[WebSocket Gateway]
+    B --> C[Agent Orchestrator]
+    C --> D[Primary Care Agent]
+    C --> E[Specialist Agent]
+    C --> F[Emergency Agent]
+    C --> G[Pharmacy Agent]
+    D --> H[LLM Models]
+    E --> H
+    F --> H
+    G --> H
+    B --> I[Conversation Store - MongoDB]
     
     style A fill:#61DAFB
-    style B fill:#68A063
-    style E fill:#FF6B6B
-    style F fill:#4ECDC4
-    style H fill:#47A248
+    style C fill:#FF6B6B
+    style H fill:#4ECDC4
+    style I fill:#47A248
 ```
 
 ## 🎯 **Target Applications**
 
-### 🏥 **Healthcare Institutions**
-- **Hospitals** - Emergency diagnostic support
-- **Clinics** - Primary care decision assistance
-- **Specialist Practices** - Advanced diagnostic insights
-- **Telemedicine** - Remote consultation support
+### 👥 **For Patients**
+- **24/7 Medical Chat** - Instant access to medical AI agents
+- **Symptom Check** - Conversational health assessment
+- **Medication Guidance** - Chat with pharmacy agents
+- **Health Monitoring** - Proactive wellness conversations
 
-### 👨‍⚕️ **Healthcare Professionals**
-- **Physicians** - Clinical decision support
-- **Nurses** - Patient assessment tools
-- **Medical Students** - Educational diagnostic training
-- **Researchers** - Medical AI research platform
+### 🏥 **For Healthcare Providers**
+- **Agent-Assisted Consultations** - AI agents support clinical decisions
+- **Patient Pre-Screening** - Agents gather initial patient information
+- **Follow-up Automation** - Agents handle routine patient check-ins
+- **Care Coordination** - Multi-agent collaboration for complex cases
 
 ## 🔒 **Security & Compliance**
 
@@ -181,12 +185,12 @@ graph TB
 
 ### 🎯 **What Makes IntelliCare Special**
 
-- **🚀 First-of-its-kind** - Comprehensive medical AI platform
-- **🔬 Multi-model approach** - Leverages best AI models available
-- **⚡ Real-time processing** - Instant diagnostic insights
-- **🏗️ Scalable architecture** - Enterprise-ready from day one
-- **🔒 Security-first** - Built for healthcare compliance
-- **🌐 Future-ready** - Designed for continuous AI advancement
+- **💬 Agent-First Design** - Healthcare delivered through intelligent conversations
+- **🤖 Specialized Medical Agents** - Each agent is an expert in its domain
+- **⚡ Instant Medical Chat** - No waiting rooms, immediate agent response
+- **🧠 Context-Aware Conversations** - Agents remember and learn from interactions
+- **🔒 Secure Medical Chat** - End-to-end encrypted healthcare conversations
+- **🌐 Always Available** - 24/7 access to medical AI agents
 
 ## 📈 **Market Opportunity**
 
@@ -209,11 +213,11 @@ Interested in learning more about IntelliCare or exploring partnership opportuni
 
 <div align="center">
   
-  **🌟 IntelliCare - Where AI Meets Healthcare Excellence**
+  **🌟 IntelliCare - Your Personal Medical AI Agents, Always Ready to Chat**
   
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer" width="100%"/>
   
-  *Building the future of intelligent healthcare, one diagnosis at a time* 🚀
+  *Transforming healthcare through intelligent conversations, one chat at a time* 💬
   
 </div>
 
