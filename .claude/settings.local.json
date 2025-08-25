@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(/C:\\Users\\Eran Gross\\IntelliCare/**)",
+      "Read(/C:\\Users\\Eran Gross\\IntelliCare/**)",
+      "Read(/C:\\Users\\Eran Gross\\IntelliCare\\backend\\services/**)",
+      "Read(/C:\\Users\\Eran Gross\\IntelliCare\\backend\\routes/**)",
+      "Read(/C:\\Users\\Eran Gross\\IntelliCare/**)",
+      "Read(/C:\\c\\Users\\Eran Gross/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
