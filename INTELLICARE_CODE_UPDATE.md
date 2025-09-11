@@ -10,9 +10,9 @@ This document outlines the comprehensive IntelliCare medical AI platform impleme
 - **Frontend**: React with Vite
 - **Database**: MongoDB with comprehensive data models
 - **AI Integration**: 
-  - Claude (Anthropic) for medical conversations
-  - Gemini for document analysis
-  - GPT for specific medical tasks
+  - Claude Sonnet 4 (Anthropic) for all medical AI capabilities
+  - Document analysis powered by Claude
+  - Medical conversations and specific tasks all handled by Claude Sonnet 4
 - **Security**: HIPAA-compliant with end-to-end encryption
 - **Infrastructure**: Microservices architecture with NX monorepo
 
@@ -29,8 +29,8 @@ This document outlines the comprehensive IntelliCare medical AI platform impleme
    - Symptom analysis
    - Treatment recommendations
 
-3. **geminiMedicalService.js** - Document processing (47KB)
-   - Medical document OCR
+3. **claudeMedicalService.js** - Document processing (47KB)
+   - Medical document OCR powered by Claude Sonnet 4
    - Lab result interpretation
    - Prescription analysis
 
@@ -200,8 +200,8 @@ This document outlines the comprehensive IntelliCare medical AI platform impleme
 4. Implement core authentication
 
 ### Phase 2: Medical AI Integration (Week 3-4)
-1. Integrate Claude API for medical conversations
-2. Set up Gemini for document processing
+1. Integrate Claude Sonnet 4 API for all medical AI capabilities
+2. Set up Claude for document processing
 3. Implement core medical functions
 4. Create AI orchestration layer
 
@@ -252,9 +252,7 @@ MONGODB_URI=mongodb://localhost:27017/intellicare
 MONGODB_DB_NAME=intellicare
 
 # AI Services
-ANTHROPIC_API_KEY=your_claude_key
-GOOGLE_AI_API_KEY=your_gemini_key
-OPENAI_API_KEY=your_openai_key
+ANTHROPIC_API_KEY=your_claude_sonnet_4_key
 
 # Security
 JWT_SECRET=your_jwt_secret

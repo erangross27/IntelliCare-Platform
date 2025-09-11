@@ -33,8 +33,8 @@ C:\Users\Eran Gross\IntelliCare\
 ```javascript
 // Essential AI service files
 - services/agentServiceV4.js (1.2MB) - Main AI orchestration
-- services/agentServiceClaude.js - Claude integration
-- services/geminiMedicalService.js - Document processing
+- services/agentServiceClaude.js - Claude Sonnet 4 integration
+- services/claudeMedicalService.js - Document processing with Claude
 - services/generatedMedicalFunctions.js - Medical operations
 ```
 
@@ -122,7 +122,6 @@ const collections = {
 {
   "dependencies": {
     "@anthropic-ai/sdk": "^0.57.0",
-    "@google/generative-ai": "^0.24.1",
     "mongodb": "^6.11.0",
     "express": "^5.0.1",
     "jsonwebtoken": "^9.0.2",
@@ -152,8 +151,7 @@ REDIS_URL=redis://localhost:6379
 JWT_SECRET=development_secret_key
 ENCRYPTION_KEY=32_byte_encryption_key_here
 SESSION_SECRET=session_secret_key
-ANTHROPIC_API_KEY=your_claude_api_key
-GOOGLE_AI_API_KEY=your_gemini_api_key
+ANTHROPIC_API_KEY=your_claude_sonnet_4_api_key
 ```
 
 ### Production Environment

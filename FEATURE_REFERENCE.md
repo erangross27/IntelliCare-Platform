@@ -13,7 +13,7 @@
   - Emergency detection
 
 ### Document Intelligence
-- **Service**: `geminiMedicalService.js`, `documentAnalysisService.js`
+- **Service**: `claudeMedicalService.js`, `documentAnalysisService.js`
 - **Route**: `/api/documents/analyze`
 - **Features**:
   - Medical document OCR

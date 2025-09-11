@@ -21,7 +21,7 @@
   
   ---
   
-  **🌟 A groundbreaking multi-tenant enterprise medical platform where EVERYTHING happens through natural conversation. No buttons to click, no forms to fill - just chat with intelligent AI agents that understand and execute complex medical workflows through advanced function calling with Anthropic Claude and Google Gemini.**
+  **🌟 A groundbreaking multi-tenant enterprise medical platform where EVERYTHING happens through natural conversation. No buttons to click, no forms to fill - just chat with intelligent AI agents that understand and execute complex medical workflows through advanced function calling with Anthropic Claude Sonnet 4.**
   
   *Currently deployed and serving medical institutions worldwide* ⚡
   
@@ -45,8 +45,8 @@ IntelliCare is the world's first and only medical platform where **100% of inter
 
 ### 🧠 **Agentic AI with Function Calling**
 - **235+ Medical Functions** - AI agents can perform any medical task
-- **Anthropic Claude Integration** - Advanced reasoning and decision making
-- **Google Gemini 2.5 Flash** - Lightning-fast medical analysis
+- **Anthropic Claude Sonnet 4 Integration** - Advanced reasoning and decision making
+- **Lightning-Fast Medical Analysis** - Powered by Claude's superior capabilities
 - **Dynamic Function Selection** - AI chooses the right tools automatically
 - **Self-Aware Architecture** - Agents understand their own capabilities
 
@@ -100,7 +100,7 @@ AI: Lab orders created and SMS reminders scheduled.
 ## 🏗️ **Technical Architecture**
 
 ### 🎯 **Cutting-Edge Technology Stack**
-- **AI Orchestration**: Anthropic Claude Sonnet + Google Gemini 2.5 Flash
+- **AI Orchestration**: Anthropic Claude Sonnet 4
 - **Function Calling**: 235+ medical functions with dynamic selection
 - **Backend**: Node.js + Express with microservices architecture (200+ services)
 - **Database**: MongoDB with complete multi-tenant isolation
@@ -136,7 +136,7 @@ AI: Lab orders created and SMS reminders scheduled.
 2. **Technical Moat** - 235+ integrated medical functions
 3. **Enterprise Ready** - Multi-tenant architecture from day one
 4. **Global Support** - Built for international healthcare
-5. **AI Leadership** - Using latest Claude and Gemini models
+5. **AI Leadership** - Using latest Claude Sonnet 4 model
 
 ## 🎯 **Target Market**
 
@@ -171,7 +171,7 @@ AI: Lab orders created and SMS reminders scheduled.
 - **100+ UI Components** - Full-featured React component library
 - **70+ API Endpoints** - Complete RESTful API coverage
 - **Multi-Tenant Platform** - Unlimited clinic support
-- **Dual AI System** - Claude + Gemini working together
+- **Advanced AI System** - Claude Sonnet 4 powering all capabilities
 - **Complete Security** - HIPAA-compliant with audit trails
 - **Hebrew + English** - Full internationalization
 
