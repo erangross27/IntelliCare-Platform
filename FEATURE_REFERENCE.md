@@ -3,24 +3,28 @@
 ## AI Medical Assistant Features
 
 ### Natural Language Medical Conversations
-- **Service**: `agentServiceV4.js`
+- **Service**: `agentServiceV4.js` (1.2MB main orchestrator)
 - **Route**: `/api/agent/chat`
 - **Features**:
+  - 2000+ medical functions (actively expanding)
   - Symptom analysis
   - Medical Q&A
   - Treatment suggestions
   - Drug information
   - Emergency detection
+  - Semantic function selection (99.6% token reduction)
 
 ### Document Intelligence
-- **Service**: `claudeMedicalService.js`, `documentAnalysisService.js`
-- **Route**: `/api/documents/analyze`
+- **Services**: `claudeBatchProcessor.js`, `documentAnalysisService.js`
+- **Routes**: `/api/documents/analyze`, `/api/agent/batch-analyze`
 - **Features**:
-  - Medical document OCR
+  - Batch document processing (50% cost savings)
+  - Medical document OCR via Claude Sonnet 4.5
   - Lab result interpretation
   - Prescription reading
   - Medical image analysis
   - Report generation
+  - Extraction of 245+ medical data types
 
 ## Patient Management Features
 
@@ -29,10 +33,11 @@
 - **Routes**: `/api/patients/*`
 - **Features**:
   - Complete medical history
-  - Document storage
+  - Document storage (245+ collection types)
   - Timeline view
   - Family history
   - Allergy tracking
+  - Multi-tenant isolation
 
 ### Appointment System
 - **Service**: `appointments.js`
@@ -40,7 +45,7 @@
 - **Features**:
   - Online scheduling
   - Calendar integration
-  - Reminder system
+  - Reminder system via SMS/Email
   - Video consultations
   - Queue management
 
@@ -49,13 +54,12 @@
 ### Diagnosis Support
 - **Service**: `clinicalDecisionSupport.js`
 - **Route**: `/api/diagnosis`
-- **Component**: `Diagnosis.js`
 - **Features**:
   - ICD-10 coding
   - Differential diagnosis
   - Clinical guidelines
   - Evidence-based recommendations
-  - Risk assessment
+  - Risk assessment via AI
 
 ### Prescription Management
 - **Service**: `prescriptionGenerator.js`
@@ -71,7 +75,7 @@
 - **Service**: `labResultInterpreter.js`
 - **Component**: `LabResultsCard.js`
 - **Features**:
-  - Result interpretation
+  - Result interpretation via AI
   - Trend analysis
   - Abnormal value alerts
   - Historical comparison
@@ -82,23 +86,23 @@
 ### HIPAA Compliance
 - **Service**: `hipaaComplianceService.js`
 - **Features**:
-  - PHI encryption
-  - Access controls
-  - Audit logging
+  - PHI encryption (AES-256)
+  - Access controls via SecureDataAccess
+  - Audit logging (every operation tracked)
   - Data retention policies
   - Breach detection
 
 ### Authentication Systems
-- **Services**: 
-  - `authAIService.js` - AI-powered auth
-  - `passwordlessAuth.js` - Magic links
-  - `mfaService.js` - Multi-factor auth
+- **Services**:
+  - `secureSessionManager.js` - Server-side sessions
+  - `serviceAccountManager.js` - Service authentication
+  - `secureDataAccess.js` - Data access control
 - **Features**:
-  - Biometric login
-  - SSO integration
-  - Session management
-  - Device trust
-  - Role-based access
+  - OTP-based authentication
+  - Session management (httpOnly cookies)
+  - Multi-tenant isolation (SACRED rule)
+  - Service account authentication via KMS
+  - Zero-trust architecture
 
 ## Healthcare Integrations
 
@@ -113,11 +117,11 @@
   - Coverage checking
 
 ### Medicare/Medicaid
-- **Services**: 
+- **Services**:
   - `medicareQualityService.js`
   - `medicaidChipService.js`
 - **Features**:
-  - Beneficiary lookup
+  - Beneficiary lookup via Blue Button
   - Coverage verification
   - Quality reporting
   - MIPS compliance
@@ -167,8 +171,8 @@
 
 ### Notifications
 - **Services**:
-  - `smsService.js` - SMS notifications
-  - `emailService.js` - Email alerts
+  - `smsService.js` - SMS notifications (Twilio)
+  - `emailService.js` - Email alerts (SendGrid)
   - `reminderService.js` - Appointment reminders
 - **Features**:
   - Multi-channel delivery
@@ -178,6 +182,15 @@
   - Unsubscribe handling
 
 ## Advanced AI Features
+
+### Semantic Function Selection
+- **Service**: `semanticFunctionSelector.js`, `claudeTwoStageSelector.js`
+- **Features**:
+  - 2000+ functions (actively expanding)
+  - 99.6% token reduction (1,352→10 functions)
+  - Two-stage selection process
+  - O(1) registry lookup
+  - Context-aware function selection
 
 ### Self-Improving Memory
 - **Service**: `selfImprovingMemory.js`
@@ -217,136 +230,176 @@
   - Alert routing
   - Escalation rules
 
-### Document Processing
-- **Service**: `batchDocumentProcessor.js`
+### Batch Document Processing
+- **Service**: `claudeBatchProcessor.js`
 - **Features**:
-  - Bulk upload
+  - Bulk upload processing
+  - 50% cost savings vs single document
   - Auto-classification
-  - Data extraction
+  - Data extraction to 245+ collections
   - Quality checking
   - Archive management
 
-## Special Features
+## Medical Data Collections (245+)
 
-### Voice Interface
-- **Component**: `VoiceInterface.js`
-- **Features**:
-  - Voice commands
-  - Dictation
-  - Voice authentication
-  - Multi-language support
-  - Accessibility compliance
+### Primary Medical Collections
+```
+diagnoses, medications, lab_results, vital_signs,
+allergies, immunizations, procedures, hospitalizations,
+radiology_results, pathology_results, discharge_plans,
+surgical_history, medication_history, problem_list,
+care_plans, advance_directives, social_history,
+family_history, preventive_care, referrals,
+consultations, progress_notes, operative_reports,
+[... 225+ more specialized collections]
+```
 
-### Mobile Optimization
-- **Components**: `MobileResponsive.css`
-- **Features**:
-  - Responsive design
-  - Touch optimization
-  - Offline capability
-  - Progressive web app
-  - Native app bridge
-
-### Learning System
-- **Service**: `learning/*` services
-- **Component**: `LearningDashboard.jsx`
-- **Features**:
-  - Medical education
-  - CME tracking
-  - Skill assessment
-  - Resource library
-  - Progress tracking
+### Managed by
+- **Service**: `medicalCollectionsService.js`
+- **Database**: Multi-tenant MongoDB (separate DB per practice)
 
 ## API Endpoints Summary
 
 ### Core Medical APIs
 ```
-POST   /api/agent/chat              - AI medical chat
-POST   /api/agent/analyze           - Medical analysis
-GET    /api/patients                - List patients
-POST   /api/patients                - Create patient
-GET    /api/patients/:id            - Get patient details
-PUT    /api/patients/:id            - Update patient
-POST   /api/documents/upload        - Upload document
-POST   /api/documents/analyze       - Analyze document
-GET    /api/appointments            - List appointments
-POST   /api/appointments            - Schedule appointment
-POST   /api/diagnosis/suggest       - Diagnosis suggestions
-POST   /api/prescriptions/generate  - Generate prescription
+POST   /api/agent/chat                    - AI medical chat
+POST   /api/agent/batch-analyze           - Batch document analysis
+GET    /api/agent/batch-progress          - Batch progress status
+POST   /api/agent/analyze                 - Single document analysis
+GET    /api/patients                      - List patients
+POST   /api/patients                      - Create patient
+GET    /api/patients/:id                  - Get patient details
+PUT    /api/patients/:id                  - Update patient
+POST   /api/documents/upload              - Upload document
+POST   /api/documents/analyze             - Analyze document
+GET    /api/appointments                  - List appointments
+POST   /api/appointments                  - Schedule appointment
+POST   /api/diagnosis/suggest             - Diagnosis suggestions
+POST   /api/prescriptions/generate        - Generate prescription
 ```
 
 ### Authentication APIs
 ```
-POST   /api/auth/login              - User login
-POST   /api/auth/magic-link         - Send magic link
-POST   /api/auth/verify-otp         - Verify OTP
-POST   /api/auth/refresh            - Refresh token
-POST   /api/auth/logout             - User logout
+POST   /api/auth/send-otp                 - Send OTP code
+POST   /api/auth/verify-otp               - Verify OTP
+POST   /api/auth/refresh                  - Refresh session
+POST   /api/auth/logout                   - User logout
 ```
 
 ### Administrative APIs
 ```
-GET    /api/clinics                 - List clinics
-POST   /api/clinics                 - Create clinic
-GET    /api/users                   - List users
-POST   /api/users                   - Create user
-GET    /api/analytics/dashboard     - Analytics data
-GET    /api/reports/generate        - Generate reports
+GET    /api/clinics                       - List clinics (practice tenants)
+POST   /api/clinics                       - Create clinic
+GET    /api/users                         - List users
+POST   /api/users                         - Create user
+GET    /api/analytics/dashboard           - Analytics data
+GET    /api/reports/generate              - Generate reports
+GET    /api/audit-logs                    - Audit trail access
 ```
 
-## Component Library
+## Component Library (100+)
 
 ### Essential React Components
 1. **ChatAuthAI.js** - AI-powered chat interface
 2. **PatientDetail.js** - Comprehensive patient view
-3. **Diagnosis.js** - Diagnosis interface
-4. **DocumentViewer.js** - Document display
-5. **MedicalHistoryModal.js** - Medical history
-6. **VitalSignsCard.js** - Vital signs display
-7. **LabResultsCard.js** - Lab results
-8. **MedicationsCard.js** - Medications list
-9. **AppointmentsCard.js** - Appointments
-10. **UserManagement.js** - User admin
+3. **PatientList.js** - Patient listing with search
+4. **Diagnosis.js** - Diagnosis interface
+5. **DocumentViewer.js** - Document display
+6. **MedicalHistoryModal.js** - Medical history
+7. **VitalSignsCard.js** - Vital signs display
+8. **LabResultsCard.js** - Lab results
+9. **MedicationsCard.js** - Medications list
+10. **AppointmentsCard.js** - Appointments
+11. **UserManagement.js** - User admin
+12. **ClinicManagementDashboard.js** - Clinic admin
+13. **NotificationCenter.js** - Real-time notifications
 
-## Database Collections
+## Database Structure
 
 ### Primary Collections
-- `patients` - Patient records
-- `clinics` - Clinic data
-- `users` - User accounts
-- `appointments` - Scheduled appointments
-- `documents` - Medical documents
-- `prescriptions` - Prescription records
-- `diagnoses` - Diagnosis history
-- `medicalHistory` - Medical events
-- `labResults` - Lab test results
-- `auditLogs` - System audit trail
+- **Global Database** (`intellicare_practice_global`):
+  - `ServiceAccounts` - Service authentication
+  - `Practices` - Multi-tenant practice records
+  - Global configuration
+
+- **Practice Databases** (`intellicare_practice_{subdomain}`):
+  - `users` - User accounts (per practice)
+  - `patients` - Patient records
+  - `appointments` - Scheduled appointments
+  - `documents` - Medical documents
+  - `chat_messages` - AI chat history
+  - `prescriptions` - Prescription records
+  - `diagnoses` - Diagnosis history
+  - `auditLogs` - System audit trail
+  - 245+ medical data collections
 
 ## Quick Start Commands
 
 ```bash
-# Install dependencies
-npm install
+# Backend development
+cd apps/backend-api
+npm run dev                # Port 5000 (auto-restart via nodemon)
 
-# Start development servers
-npm run dev:backend
-npm run dev:frontend
+# Frontend development
+cd apps/frontend-vite
+npm run dev                # Port 3000 (Vite HMR)
 
-# Run tests
-npm test
+# Log monitoring
+tail -f apps/backend-api/logs/server-errors.log
 
-# Build for production
-npm run build
+# Database backup
+node scripts/backupDatabase.js
 
-# Deploy
-npm run deploy
+# Verify data extraction
+node scripts/verifyDataExtractionAutoWithCache.js --no-cache
+```
+
+## Critical Rules
+
+### Development Rules
+1. **NEVER kill NPM processes** - Destroys user sessions
+2. **Backend auto-restarts** - Via nodemon, don't restart manually
+3. **Frontend auto-refreshes** - Via Vite HMR
+4. **Database access** - ALL operations through SecureDataAccess
+5. **Multi-tenant isolation** - SACRED rule, never bypass
+
+### Security Rules
+```javascript
+// ONLY these methods exist:
+await SecureDataAccess.query(collection, filter, options, context)
+await SecureDataAccess.insert(collection, document, context)
+await SecureDataAccess.update(collection, filter, updates, context)
+await SecureDataAccess.delete(collection, filter, context, options)
+await SecureDataAccess.aggregate(collection, pipeline, context)
+
+// Context REQUIRED:
+const context = {
+  serviceId: 'service-name',
+  operation: 'operation-name',
+  practiceId: req.practice?.id || 'global'
+};
 ```
 
 ## Support Resources
 
-- Source Code: `C:\Users\Eran Gross\IntelliCare`
-- Documentation: `docs/` directory
-- API Documentation: `/api/docs`
-- Admin Dashboard: `/admin`
-- Support Portal: `/support`
+- **Project Location**: `/home/erangross/Development/IntelliCare`
+- **Backend**: `apps/backend-api/`
+- **Frontend**: `apps/frontend-vite/`
+- **Documentation**: `docs/` directory
+- **Scripts**: `scripts/` directory
+- **Production Domain**: `intellicare.health`
 
-This reference guide provides quick access to all major features and components of the IntelliCare platform. Use it as a quick lookup for implementing specific functionality.
+## AI Model Configuration
+
+### Claude Sonnet 4.5
+- **Model ID**: `claude-sonnet-4-5-20250929`
+- **Use Case**: Medical document extraction and analysis
+- **Batch Processing**: 50% cost savings
+- **Pricing**: $3/1M input, $15/1M output tokens
+
+### Claude Haiku
+- **Use Case**: Real-time function execution
+- **Performance**: <1s response time
+- **Use Case**: Interactive chat operations
+
+This reference guide provides quick access to all major features and components of the IntelliCare platform based on the actual implementation.

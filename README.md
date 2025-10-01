@@ -1,59 +1,59 @@
 <!-- Animated Header -->
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=150&section=header&text=IntelliCare&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Revolutionary%20Chat-First%20Medical%20AI%20Platform&descAlignY=55&descSize=20" width="100%"/>
-  
-  # 💬 IntelliCare - The World's First Chat-Only Medical AI Platform
-  
-  ### 🤖 *Everything Happens in the Chat - No Buttons, No Forms, Just Natural Conversation*
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=150&section=header&text=IntelliCare&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Intelligent%20Medical%20AI%20Platform&descAlignY=55&descSize=20" width="100%"/>
+
+  # IntelliCare - Intelligent Medical AI Platform
+
+  ### *AI-Powered Healthcare Management with Claude Sonnet 4.5*
   
   <!-- Status Badges -->
   <p>
-    <img src="https://img.shields.io/badge/🚀-Live%20in%20Production-brightgreen?style=for-the-badge" alt="Live in Production"/>
-    <img src="https://img.shields.io/badge/🤖-Agentic%20AI-blue?style=for-the-badge" alt="Agentic AI"/>
-    <img src="https://img.shields.io/badge/🏥-Multi--Tenant-red?style=for-the-badge" alt="Multi-Tenant"/>
-    <img src="https://img.shields.io/badge/🔒-HIPAA%20Compliant-purple?style=for-the-badge" alt="HIPAA Compliant"/>
+    <img src="https://img.shields.io/badge/Live%20in%20Production-brightgreen?style=for-the-badge" alt="Live in Production"/>
+    <img src="https://img.shields.io/badge/Agentic%20AI-blue?style=for-the-badge" alt="Agentic AI"/>
+    <img src="https://img.shields.io/badge/Multi--Tenant-red?style=for-the-badge" alt="Multi-Tenant"/>
+    <img src="https://img.shields.io/badge/HIPAA%20Compliant-purple?style=for-the-badge" alt="HIPAA Compliant"/>
   </p>
-  
+
   <!-- Call to Action -->
   <p>
-    <img src="https://img.shields.io/badge/💡-Revolutionary%20Innovation-FFD700?style=for-the-badge&labelColor=FF8C00" alt="Revolutionary Innovation"/>
-    <img src="https://img.shields.io/badge/🌍-Global%20Enterprise%20Solution-00CED1?style=for-the-badge&labelColor=008B8B" alt="Global Enterprise"/>
+    <img src="https://img.shields.io/badge/Enterprise%20Grade-FFD700?style=for-the-badge&labelColor=FF8C00" alt="Enterprise Grade"/>
+    <img src="https://img.shields.io/badge/Global%20Healthcare%20Platform-00CED1?style=for-the-badge&labelColor=008B8B" alt="Global Healthcare"/>
   </p>
   
   ---
   
-  **🌟 A groundbreaking multi-tenant enterprise medical platform where EVERYTHING happens through natural conversation. No buttons to click, no forms to fill - just chat with intelligent AI agents that understand and execute complex medical workflows through advanced function calling with Anthropic Claude Sonnet 4.**
-  
-  *Currently deployed and serving medical institutions worldwide* ⚡
-  
+  **A comprehensive multi-tenant enterprise medical platform combining traditional healthcare management with cutting-edge AI capabilities. Features intelligent medical assistants powered by Anthropic Claude Sonnet 4.5 for document analysis, natural language processing, and clinical decision support.**
+
+  *Built for medical institutions with enterprise-grade security and HIPAA compliance*
+
 </div>
 
-## 🚀 **Revolutionary Innovation: Chat-First Architecture**
+## **Platform Highlights**
 
-IntelliCare is the world's first and only medical platform where **100% of interactions happen through natural conversation**. This isn't a chatbot added to a traditional app - it's a complete reimagination of how medical software works.
+IntelliCare is an enterprise medical platform that combines **traditional healthcare management tools** with **advanced AI capabilities** powered by Claude Sonnet 4.5. The platform provides a full-featured medical EMR system enhanced with intelligent AI assistants.
 
-### 💬 **Everything is a Conversation**
-- **No buttons** - Just tell the AI what you need
-- **No forms** - Describe patient information naturally
-- **No navigation** - The AI brings everything to you
-- **No training needed** - If you can chat, you can use IntelliCare
+### **Hybrid Architecture**
+- **Traditional UI** - Comprehensive dashboards, forms, and navigation
+- **AI Enhancement** - Intelligent chat assistant for complex queries
+- **Document Intelligence** - AI-powered medical document analysis
+- **Clinical Support** - AI-assisted diagnosis and treatment recommendations
 
-## ✨ **What Makes IntelliCare Unique**
+## **What Makes IntelliCare Unique**
 
 <table>
 <tr>
 <td width="50%">
 
-### 🧠 **Agentic AI with Function Calling**
-- **235+ Medical Functions** - AI agents can perform any medical task
-- **Anthropic Claude Sonnet 4 Integration** - Advanced reasoning and decision making
-- **Lightning-Fast Medical Analysis** - Powered by Claude's superior capabilities
-- **Dynamic Function Selection** - AI chooses the right tools automatically
-- **Self-Aware Architecture** - Agents understand their own capabilities
+### **AI-Powered Intelligence**
+- **2000+ Medical Functions** - Comprehensive clinical operation coverage (actively expanding)
+- **Claude Sonnet 4.5 Integration** - Advanced medical document analysis
+- **Claude Haiku** - Fast function execution for real-time operations
+- **Batch Document Processing** - Efficient processing of multiple medical documents
+- **Semantic Function Selection** - 99.6% token reduction through intelligent context-aware selection
 
 </td>
 <td width="50%">
 
-### 🏗️ **Enterprise Multi-Tenant Platform**
+### **Enterprise Multi-Tenant Platform**
 - **Complete Clinic Isolation** - Separate database per institution
 - **Global Deployment** - Supports US and Israeli healthcare systems
 - **Unlimited Scale** - From solo practices to hospital networks
@@ -64,9 +64,9 @@ IntelliCare is the world's first and only medical platform where **100% of inter
 </tr>
 </table>
 
-## 🎯 **How It Works - Pure Chat Magic**
+## **How It Works**
 
-### 📝 **Example Conversations**
+### **Example Conversations**
 
 ```
 Doctor: "Show me all diabetic patients who haven't had checkups in 6 months"
@@ -84,9 +84,9 @@ AI: Lab orders created and SMS reminders scheduled.
 
 **No clicking. No forms. Just natural conversation.**
 
-## 🏥 **Real-World Medical Capabilities**
+## **Real-World Medical Capabilities**
 
-### 🤖 **What Our AI Agents Can Do**
+### **What Our AI Can Do**
 - **Patient Management** - Create, update, search patients through chat
 - **Medical History** - Add symptoms, diagnoses, medications naturally
 - **Document Analysis** - Upload and analyze medical documents via chat
@@ -97,11 +97,11 @@ AI: Lab orders created and SMS reminders scheduled.
 - **Clinical Decisions** - AI-powered diagnostic assistance
 - **Compliance Reporting** - Automatic HIPAA-compliant documentation
 
-## 🏗️ **Technical Architecture**
+## **Technical Architecture**
 
-### 🎯 **Cutting-Edge Technology Stack**
-- **AI Orchestration**: Anthropic Claude Sonnet 4
-- **Function Calling**: 235+ medical functions with dynamic selection
+### **Cutting-Edge Technology Stack**
+- **AI Orchestration**: Anthropic Claude Sonnet 4.5 (document analysis) + Claude Haiku (function execution)
+- **Function Calling**: 2000+ medical functions with semantic selection
 - **Backend**: Node.js + Express with microservices architecture (200+ services)
 - **Database**: MongoDB with complete multi-tenant isolation
 - **Security**: Zero-trust architecture with KMS key management
@@ -123,91 +123,91 @@ AI: Lab orders created and SMS reminders scheduled.
 - **Secure Data Access** - No direct database queries allowed
 - **KMS Integration** - All keys managed through Google KMS
 
-## 📊 **Market Disruption Potential**
+## **Market Disruption Potential**
 
-### 🌍 **Global Market Opportunity**
+### **Global Market Opportunity**
 - **$500B** - Global healthcare IT market
 - **0%** - Current chat-first medical platforms (we're the first)
 - **10x** - Productivity improvement over traditional EMR systems
 - **90%** - Reduction in training time (chat needs no training)
 
-### 🚀 **Competitive Advantages**
-1. **First Mover** - No other chat-first medical platform exists
-2. **Technical Moat** - 235+ integrated medical functions
+### **Competitive Advantages**
+1. **Comprehensive Coverage** - 2000+ medical functions (actively expanding)
+2. **Technical Moat** - Advanced AI-powered clinical intelligence
 3. **Enterprise Ready** - Multi-tenant architecture from day one
 4. **Global Support** - Built for international healthcare
 5. **AI Leadership** - Using latest Claude Sonnet 4 model
 
-## 🎯 **Target Market**
+## **Target Market**
 
-### 🏥 **Primary Customers**
+### **Primary Customers**
 - **Medical Clinics** - 10-50 providers
 - **Hospital Networks** - 100+ providers
 - **Specialty Practices** - Focused medical domains
 - **Urgent Care Centers** - High-volume facilities
 - **Telemedicine Providers** - Digital-first healthcare
 
-### 🌍 **Geographic Focus**
+### **Geographic Focus**
 - **United States** - HIPAA-compliant, English interface
 - **Israel** - Hebrew support, local regulations
 - **Europe** - GDPR-ready architecture (planned)
 - **Asia-Pacific** - Multi-language support (planned)
 
-## 📈 **Business Model**
+## **Business Model**
 
-### 💰 **Revenue Streams**
+### **Revenue Streams**
 - **SaaS Subscription** - Per provider per month
 - **Enterprise Licenses** - Custom pricing for large institutions
 - **Transaction Fees** - Per AI interaction above limits
 - **White Label** - Custom deployments for healthcare networks
 - **API Access** - Integration with existing EMR systems
 
-## 🚀 **Current Status**
+## **Current Status**
 
-### ✅ **What's Built and Running**
+### **What's Built and Running**
 - **Live Production System** - Actively serving medical institutions
-- **235+ Medical Functions** - Complete medical workflow coverage
+- **2000+ Medical Functions** - Complete medical workflow coverage (actively expanding)
 - **200+ Backend Services** - Comprehensive healthcare operations
 - **100+ UI Components** - Full-featured React component library
 - **70+ API Endpoints** - Complete RESTful API coverage
 - **Multi-Tenant Platform** - Unlimited clinic support
-- **Advanced AI System** - Claude Sonnet 4 powering all capabilities
+- **Advanced AI System** - Claude Sonnet 4.5 + Haiku powering all capabilities
 - **Complete Security** - HIPAA-compliant with audit trails
 - **Hebrew + English** - Full internationalization
 
-### 🔄 **Active Development**
+### **Active Development**
 - **Mobile Apps** - iOS/Android native apps (Q1 2025)
 - **Voice Interface** - Speak instead of type (Q1 2025)
 - **Video Consultations** - Integrated telemedicine (Q2 2025)
 - **AI Training** - Custom models per specialty (Q2 2025)
 
-## 🤝 **Investment Opportunity**
+## **Investment Opportunity**
 
-### 🎯 **What We're Looking For**
+### **What We're Looking For**
 - **Series A Funding** - $10-15M to scale globally
 - **Strategic Partners** - Healthcare networks and EMR vendors
 - **Technical Co-Founder** - AI/ML expertise preferred
 - **Medical Advisors** - Domain experts in various specialties
 
-### 📊 **Use of Funds**
+### **Use of Funds**
 - **40%** - Engineering team expansion
 - **30%** - Sales and marketing
 - **20%** - AI model training and infrastructure
 - **10%** - Regulatory compliance and certifications
 
-## 🏆 **Why IntelliCare Will Win**
+## **Why IntelliCare Will Win**
 
-### 🚀 **The Future is Chat**
+### **The Future of Healthcare AI**
 Traditional medical software with hundreds of buttons and forms is obsolete. IntelliCare represents the future where medical professionals simply have conversations with AI to get work done.
 
-### 💡 **Key Differentiators**
+### **Key Differentiators**
 1. **Zero Learning Curve** - Anyone who can chat can use it
 2. **10x Faster** - Natural language beats clicking through menus
 3. **No Integration Needed** - Complete platform, not an add-on
 4. **Infinitely Flexible** - AI adapts to any workflow
 5. **Future-Proof** - Built on latest AI technology
 
-## 📧 **Contact**
+## **Contact**
 
 ### **Founder & Lead Developer**
 **Eran Gross**
@@ -225,17 +225,17 @@ Traditional medical software with hundreds of buttons and forms is obsolete. Int
 
 <div align="center">
   
-  **🌟 IntelliCare - Where Medical Software Becomes Conversation**
-  
+  **IntelliCare - Intelligent Medical AI Platform**
+
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer" width="100%"/>
-  
-  *Revolutionizing healthcare by replacing every button with natural conversation* 💬
+
+  *Revolutionizing healthcare with AI-powered clinical intelligence*
   
 </div>
 
 ---
 
-## 📄 **Legal Notice**
+## **Legal Notice**
 
 This is a public documentation repository showcasing the IntelliCare platform. The actual implementation code is in a private repository under active development. All architectural designs, concepts, and intellectual property are protected.
 

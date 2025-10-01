@@ -1,107 +1,38 @@
-# 💬 IntelliCare Agent-First Chat Architecture
+# IntelliCare Platform Architecture
 
 <div align="center">
-  <img src="https://img.shields.io/badge/🏗️-Enterprise%20Architecture-blue?style=for-the-badge" alt="Enterprise Architecture"/>
-  <img src="https://img.shields.io/badge/🔒-HIPAA%20Compliant-green?style=for-the-badge" alt="HIPAA Compliant"/>
-  <img src="https://img.shields.io/badge/⚡-High%20Performance-orange?style=for-the-badge" alt="High Performance"/>
+  <img src="https://img.shields.io/badge/Enterprise%20Architecture-blue?style=for-the-badge" alt="Enterprise Architecture"/>
+  <img src="https://img.shields.io/badge/HIPAA%20Compliant-green?style=for-the-badge" alt="HIPAA Compliant"/>
+  <img src="https://img.shields.io/badge/High%20Performance-orange?style=for-the-badge" alt="High Performance"/>
 </div>
 
 ---
 
-## 🎯 **Architecture Overview**
+## **Architecture Overview**
 
-IntelliCare employs an **agent-first conversational architecture** where specialized medical AI agents deliver healthcare through intelligent chat interactions, ensuring secure, reliable, and personalized medical conversations at scale.
+IntelliCare employs an **enterprise medical platform architecture** combining traditional healthcare management with advanced AI capabilities. The system uses Claude Sonnet 4.5 for medical document analysis and Claude Haiku for real-time function execution, ensuring both accuracy and performance.
 
-## 📊 **System Architecture Diagram**
+## **System Architecture**
 
-```mermaid
-graph TB
-    subgraph "Chat Interface Layer"
-        A[Web Chat UI - React]
-        B[Mobile Chat - React Native]
-        C[API Chat Interface]
-    end
-    
-    subgraph "Real-time Communication Layer"
-        D[WebSocket Gateway]
-        E[Message Router]
-        F[Session Manager]
-    end
-    
-    subgraph "Agent Orchestration Layer"
-        G[Agent Orchestrator]
-        H[Primary Care Agent]
-        I[Specialist Agent]
-        J[Emergency Agent]
-        K[Pharmacy Agent]
-        L[Wellness Agent]
-    end
-    
-    subgraph "AI Processing Layer"
-        M[LLM Router]
-        N[Medical Language Models]
-        O[Context Manager]
-        P[Memory Store]
-    end
-    
-    subgraph "Data Layer"
-        Q[(MongoDB - Conversations)]
-        R[(MongoDB - User Profiles)]
-        S[(Redis - Active Sessions)]
-        T[(Vector DB - Medical Knowledge)]
-    end
-    
-    subgraph "Healthcare Integrations"
-        U[EHR Systems]
-        V[Medical APIs]
-        W[Compliance Services]
-    end
-    
-    A --> D
-    B --> D
-    C --> D
-    D --> E
-    E --> F
-    E --> G
-    G --> H
-    G --> I
-    G --> J
-    G --> K
-    G --> L
-    H --> M
-    I --> M
-    J --> M
-    K --> M
-    L --> M
-    M --> N
-    M --> O
-    O --> P
-    G --> Q
-    F --> R
-    F --> S
-    N --> T
-    G --> U
-    G --> V
-    G --> W
-    
-    style A fill:#61DAFB
-    style G fill:#FF6B6B
-    style M fill:#4ECDC4
-    style Q fill:#47A248
-```
+### **Core Components**
+1. **Frontend Layer** - React (Vite) with 100+ components
+2. **Backend API** - Node.js + Express with 200+ microservices
+3. **AI Processing** - Claude Sonnet 4.5 + Haiku integration
+4. **Database Layer** - MongoDB with multi-tenant isolation
+5. **Security Layer** - Zero-trust architecture with KMS
 
 ---
 
-## 🏛️ **Architecture Principles**
+## **Architecture Principles**
 
-### 🎯 **Design Philosophy**
-- **Conversation First** - Every interaction is a natural medical conversation
-- **Agent Intelligence** - Specialized agents for different medical domains
-- **Context Awareness** - Agents maintain conversation history and medical context
-- **Real-time Chat** - WebSocket-based instant messaging architecture
-- **Personalized Experience** - Agents learn and adapt to individual patients
+### **Design Philosophy**
+- **Multi-Tenant Isolation** - Complete data separation per clinic
+- **AI-Enhanced Operations** - 2000+ medical functions (actively expanding)
+- **Security First** - HIPAA compliance and zero-trust architecture
+- **Scalable Design** - Microservices architecture for horizontal scaling
+- **Performance Optimized** - Redis caching with 95% hit rate
 
-### 🔒 **Security Principles**
+### **Security Principles**
 - **Zero Trust Architecture** - Verify every request, trust nothing by default
 - **Defense in Depth** - Multiple security layers throughout the system
 - **Least Privilege Access** - Minimal required permissions for each component
@@ -110,17 +41,17 @@ graph TB
 
 ---
 
-## 🖥️ **Frontend Architecture**
+## **Frontend Architecture**
 
-### 📱 **Client Applications**
+### **Client Applications**
 
-#### **Chat Application (React)**
-- **Framework:** React 18+ with TypeScript
-- **Chat UI:** Custom chat components with rich message formatting
-- **Real-time:** WebSocket client for instant messaging
-- **Message Types:** Text, voice, images, medical documents
-- **Agent Avatars:** Visual representation of different medical agents
-- **Chat History:** Persistent conversation threads with search
+#### **Web Application (React + Vite)**
+- **Framework:** React 18+ with Vite
+- **UI Library:** 100+ custom medical components
+- **State Management:** React Context API
+- **Styling:** Tailwind CSS
+- **Real-time:** WebSocket client for live updates
+- **Internationalization:** Hebrew + English with RTL support
 
 #### **Progressive Web App (PWA)**
 - **Service Workers** - Offline functionality and caching
@@ -128,26 +59,22 @@ graph TB
 - **Push Notifications** - Real-time diagnostic alerts
 - **Local Storage** - Secure client-side data persistence
 
-### 💬 **Chat UI Architecture**
+### **Application Structure**
 ```
-src/
-├── components/           # Chat UI components
-│   ├── chat/            # Chat interface components
-│   ├── agents/          # Agent avatar and presence
-│   ├── messages/        # Message types and formatting
-│   └── inputs/          # Chat input components
-├── agents/              # Agent definitions and logic
-├── conversations/       # Conversation management
-├── websocket/           # Real-time communication
-├── context/             # Chat state management
-└── utils/               # Chat utilities
+frontend-vite/src/
+├── components/           # React UI components (100+)
+├── services/            # API service layer
+├── context/             # React context providers
+├── hooks/               # Custom React hooks
+├── pages/               # Page components
+└── utils/               # Frontend utilities
 ```
 
 ---
 
-## 🔗 **Backend Architecture**
+## **Backend Architecture**
 
-### 🌐 **API Gateway & Load Balancing**
+### **API Gateway & Load Balancing**
 
 #### **Load Balancer (Nginx)**
 - **SSL Termination** - Handles HTTPS certificates
@@ -156,171 +83,119 @@ src/
 - **Health Checks** - Automatic unhealthy instance removal
 
 #### **WebSocket Gateway**
-- **Real-time Messaging** - Instant bidirectional communication
-- **Agent Routing** - Intelligent routing to specialized agents
-- **Message Queue** - Reliable message delivery and ordering
-- **Presence Management** - Agent availability and status
-- **Session Persistence** - Conversation continuity across connections
+- **Real-time Updates** - Batch processing progress notifications
+- **Database Polling** - Progress tracking via MongoDB
+- **Session Management** - Secure session persistence
+- **Notification System** - Real-time alerts and updates
 
-### 🔧 **Core Services**
+### **Core Services** (200+)
 
-#### **Chat Authentication**
-```typescript
-Interface: ChatAuthService
-├── Chat Session Creation
-├── Anonymous Chat Support
-├── Registered User Chat
-├── Agent Authentication
-├── Conversation Encryption
-└── Privacy Controls
+#### **AI Services**
+```
+- agentServiceV4.js (1.2MB) - Main AI orchestration
+- agentServiceClaude.js - Claude API integration
+- claudeBatchProcessor.js - Batch document processing
+- documentAnalysisService.js - Document analysis
+- semanticFunctionSelector.js - Function selection (99.6% token reduction)
 ```
 
-#### **Conversation Management**
-```typescript
-Interface: ConversationService
-├── Chat Thread Management
-├── Message History Storage
-├── Context Preservation
-├── Agent Handoff Logic
-├── Conversation Analytics
-└── Chat Export/Archive
+#### **Authentication & Security**
+```
+- secureDataAccess.js - All database operations MUST use this
+- secureSessionManager.js - Server-side session management
+- serviceAccountManager.js - Service authentication
+- hipaaComplianceService.js - HIPAA compliance enforcement
 ```
 
-#### **Agent Services**
-```typescript
-Interface: AgentService
-├── Agent Orchestration
-├── Intent Recognition
-├── Response Generation
-├── Context Management
-├── Agent Specialization
-└── Learning & Adaptation
+#### **Medical Data Services**
+```
+- medicalDataService.js - Medical data management
+- medicalCollectionsService.js - 245+ medical collections
+- patientDataService.js - Patient operations
+- clinicalDecisionSupport.js - Clinical support
 ```
 
 ---
 
-## 🤖 **AI Processing Architecture**
+## **AI Processing Architecture**
 
-### 🤖 **Agent Orchestration Layer**
+### **AI Model Configuration**
 
-#### **Agent Management**
-- **Agent Registry** - Catalog of specialized medical agents
-- **Agent Routing** - Intent-based agent selection
-- **Multi-Agent Collaboration** - Agents working together on complex cases
-- **Agent Learning** - Continuous improvement from conversations
-- **Performance Tracking** - Agent effectiveness metrics
+#### **Claude Sonnet 4.5** (`claude-sonnet-4-5-20250929`)
+- **Primary Use:** Medical document extraction and analysis
+- **Batch Processing:** 50% cost savings via batch API
+- **Pricing:** $3 per 1M input tokens, $15 per 1M output tokens
+- **Features:** High accuracy medical document analysis
 
-#### **Conversation Flow**
-```python
-Agent Conversation Flow:
-1. Message Reception
-2. Intent Classification
-3. Agent Selection
-4. Context Retrieval
-5. Response Generation
-6. Medical Validation
-7. Message Delivery
-8. Conversation Update
-```
+#### **Claude Haiku**
+- **Primary Use:** Real-time function execution
+- **Features:** Fast response times for interactive operations
+- **Performance:** <1s response time for most operations
 
-### 🔬 **Medical AI Models**
+### **Function Selection System**
 
-#### **Medical Agent Types**
-- **Primary Care Agent** - General health consultations
-- **Specialist Agents** - Cardiology, neurology, pediatrics, etc.
-- **Emergency Triage Agent** - Urgent care assessment
-- **Medication Agent** - Drug information and interactions
-- **Mental Health Agent** - Psychological support and guidance
+#### **Semantic Selection**
+- **Total Functions:** 2000+ (actively expanding)
+- **Selection Method:** AI-powered semantic matching
+- **Token Reduction:** 99.6% (1,352→10 functions)
+- **Performance:** <1ms lookup time (O(1) registry)
 
-#### **Agent Capabilities**
-```yaml
-Agent Features:
-  Conversation:
-    - Natural language understanding
-    - Medical terminology recognition
-    - Empathetic responses
-    - Multi-turn dialogue
-  
-  Medical:
-    - Symptom assessment
-    - Risk evaluation
-    - Treatment suggestions
-    - Medication guidance
-  
-  Personalization:
-    - Patient history awareness
-    - Preference learning
-    - Adaptive communication style
-```
+#### **Two-Stage Selection** (`claudeTwoStageSelector.js`)
+1. **Stage 1:** Semantic filtering to relevant subset
+2. **Stage 2:** AI selection of specific functions
+3. **Result:** Minimal token usage with maximum relevance
 
 ---
 
-## 💾 **Data Architecture**
+## **Data Architecture**
 
-### 🗄️ **Database Design**
+### **Database Design**
 
-#### **MongoDB Collections**
-```javascript
-Database: intellicare
-├── users                 // User accounts and profiles
-├── conversations        // Chat threads and messages
-├── agents               // Agent configurations
-├── contexts             // Conversation contexts
-├── intents              // Recognized intents
-└── analytics            // Chat analytics and metrics
+#### **MongoDB Multi-Tenant Architecture**
+```
+Global Database: intellicare_practice_global
+├── ServiceAccounts
+├── Practices
+└── Global Configuration
+
+Practice Databases: intellicare_practice_{subdomain}
+├── Users
+├── Patients
+├── Appointments
+├── Documents
+├── Chat Messages
+├── Medical Data (245+ collections)
+└── Audit Logs
 ```
 
-#### **Data Models**
-```typescript
-// Core Chat Entities
-User {
-  _id: ObjectId
-  name: string
-  email: string (encrypted)
-  chatPreferences: ChatPreferences
-  conversationHistory: ObjectId[]
-  createdAt: Date
-  lastActive: Date
-}
+#### **Security Configuration**
+- **Authentication:** Required for ALL connections
+- **Localhost Bypass:** DISABLED (`enableLocalhostAuthBypass: 0`)
+- **Credentials:** Stored in KMS only
+- **Connection String:** `mongodb://intellicare_app:[PASSWORD]@localhost:27017/`
 
-Conversation {
-  _id: ObjectId
-  userId: ObjectId
-  messages: Message[]
-  activeAgents: Agent[]
-  context: ConversationContext
-  status: ConversationStatus
-  createdAt: Date
-  updatedAt: Date
-}
-
-Message {
-  _id: ObjectId
-  conversationId: ObjectId
-  sender: SenderType // User or Agent
-  agentId?: ObjectId
-  content: string
-  attachments?: Attachment[]
-  intent?: RecognizedIntent
-  medicalContext?: MedicalContext
-  timestamp: Date
-}
+### **Medical Data Collections** (245+)
+```
+diagnoses, medications, lab_results, vital_signs,
+allergies, immunizations, procedures, hospitalizations,
+radiology_results, pathology_results, discharge_plans,
+[... 235+ more collections]
 ```
 
-### 🔄 **Caching Strategy**
+### **Caching Strategy**
 
 #### **Redis Implementation**
-- **Active Chats** - Real-time conversation state
-- **Agent Availability** - Online agent status and queue
-- **Message Queue** - Reliable message delivery
-- **Typing Indicators** - Real-time user activity
-- **Conversation Cache** - Recent message history
+- **Active Sessions** - User session data
+- **Function Registry** - O(1) instant lookup
+- **Medical Data** - Frequently accessed records
+- **Performance:** 95% cache hit rate target
+- **Auto-Invalidation** - Smart cache invalidation on updates
 
 ---
 
-## 🔒 **Security Architecture**
+## **Security Architecture**
 
-### 🛡️ **Multi-Layer Security**
+### **Multi-Layer Security**
 
 #### **Network Security**
 ```yaml
@@ -336,15 +211,17 @@ Security Layers:
 ```yaml
 Application Security:
   Authentication:
-    - JWT Tokens with short expiration
-    - Refresh token rotation
-    - Multi-factor authentication
-    
+    - Server-side sessions (httpOnly cookies)
+    - OTP-based authentication
+    - No magic links (same tab only)
+    - Service account authentication via KMS
+
   Authorization:
-    - Role-based access control (RBAC)
-    - Resource-level permissions
-    - API endpoint protection
-    
+    - Multi-tenant isolation (SACRED rule)
+    - SecureDataAccess for ALL database operations
+    - Service-level authentication
+    - Practice-specific data access
+
   Data Protection:
     - AES-256 encryption at rest
     - TLS 1.3 encryption in transit
@@ -352,54 +229,50 @@ Application Security:
     - Data anonymization for analytics
 ```
 
-### 📋 **Compliance Framework**
-
-#### **HIPAA Compliance Architecture**
+### **HIPAA Compliance Architecture**
 - **Administrative Safeguards** - Security officer, training, access management
 - **Physical Safeguards** - Facility controls, workstation security
 - **Technical Safeguards** - Access control, audit controls, integrity, transmission security
+- **Audit Trails** - Complete logging via `auditLogService.js`
 
-#### **Data Governance**
-```yaml
-Data Governance:
-  Privacy:
-    - Data minimization principles
-    - Consent management
-    - Right to deletion (GDPR Article 17)
-    - Data portability
-    
-  Security:
-    - Regular security assessments
-    - Penetration testing
-    - Vulnerability scanning
-    - Security incident response plan
-    
-  Compliance:
-    - Audit trail maintenance
-    - Compliance reporting
-    - Risk assessment procedures
-    - Business associate agreements
+#### **Critical Security Rules**
+```javascript
+// ONLY these methods exist for database access:
+await SecureDataAccess.query(collection, filter, options, context)
+await SecureDataAccess.insert(collection, document, context)
+await SecureDataAccess.update(collection, filter, updates, context)
+await SecureDataAccess.delete(collection, filter, context, options)
+await SecureDataAccess.aggregate(collection, pipeline, context)
+
+// Context REQUIRED:
+const context = {
+  serviceId: 'service-name',
+  operation: 'operation-name',
+  practiceId: req.practice?.id || 'global'
+};
 ```
 
 ---
 
-## ⚡ **Performance Architecture**
+## **Performance Architecture**
 
-### 🚀 **Scalability Design**
+### **Scalability Design**
 
 #### **Horizontal Scaling**
 ```yaml
 Scaling Strategy:
   Load Balancing:
+    - Nginx reverse proxy
     - Round-robin distribution
     - Health check monitoring
     - Automatic failover
-    
+
   Microservices:
+    - 200+ independent services
+    - Service auto-registration
+    - Container orchestration ready
     - Independent scaling per service
-    - Container orchestration (Docker/Kubernetes)
-    - Service mesh architecture
-    
+
   Database:
     - MongoDB replica sets
     - Read/write separation
@@ -407,134 +280,137 @@ Scaling Strategy:
 ```
 
 #### **Performance Optimization**
-- **CDN Integration** - Global content delivery for static assets
-- **Image Optimization** - Compressed medical images and documents
-- **Code Splitting** - Lazy loading for optimal bundle sizes
+- **Semantic Function Selection** - 99.6% token reduction
+- **Redis Caching** - 95% hit rate target
+- **Batch Document Processing** - 50% cost savings
 - **Database Indexing** - Optimized query performance
 - **Connection Pooling** - Efficient database connection management
 
-### 📊 **Monitoring & Observability**
+### **Monitoring & Observability**
 
 #### **System Monitoring**
 ```yaml
 Monitoring Stack:
+  Logs:
+    - Centralized logging (lnav for analysis)
+    - Structured logging (JSON format)
+    - Error tracking and alerting
+
   Metrics:
     - Application performance metrics
     - Database performance monitoring
     - AI model performance tracking
-    
-  Logging:
-    - Centralized log aggregation
-    - Structured logging (JSON format)
-    - Log correlation and searching
-    
-  Alerting:
-    - Real-time alert notifications
-    - Threshold-based monitoring
-    - Anomaly detection
-    
-  Tracing:
-    - Distributed request tracing
-    - Performance bottleneck identification
-    - Service dependency mapping
+
+  Tools:
+    - lnav (log analysis)
+    - ripgrep (code search)
+    - htop (system monitoring)
+    - MongoDB MCP tools (database inspection)
 ```
 
 ---
 
-## 🌐 **Deployment Architecture**
+## **Deployment Architecture**
 
-### ☁️ **Cloud Infrastructure**
+### **Production Environment**
 
-#### **Multi-Cloud Strategy**
+#### **Infrastructure**
 ```yaml
 Infrastructure:
-  Primary Cloud: AWS
-    - EC2 instances for application servers
-    - RDS for managed database services
-    - S3 for file storage
-    - CloudFront for CDN
-    - Route 53 for DNS management
-    
-  Backup Cloud: Azure
-    - Disaster recovery infrastructure
-    - Cross-cloud data replication
-    - Failover capabilities
+  Domain: intellicare.health
+
+  Services:
+    - Backend API (Port 5000)
+    - Frontend (Port 3000)
+    - MongoDB (Port 27017)
+    - Redis (Port 6379)
+
+  Security:
+    - SSL/TLS certificates
+    - KMS key management
+    - Service account authentication
+    - Multi-tenant database isolation
 ```
 
-#### **Container Orchestration**
-```yaml
-Kubernetes Deployment:
-  Namespaces:
-    - production
-    - staging  
-    - development
-  
-  Services:
-    - Frontend deployment (3 replicas)
-    - Backend API deployment (5 replicas)
-    - AI microservice deployment (3 replicas)
-    - Database deployment (MongoDB cluster)
-  
-  Configuration:
-    - ConfigMaps for environment variables
-    - Secrets for sensitive data
-    - Persistent volumes for data storage
-```
+#### **Service Management**
+- **Backend:** Auto-restarts via nodemon
+- **Frontend:** Auto-refreshes via Vite HMR
+- **MongoDB:** Authenticated connections only
+- **Redis:** Session and cache management
 
 ---
 
-## 🔄 **Integration Architecture**
+## **Integration Architecture**
 
-### 🔌 **External Integrations**
+### **External Integrations**
 
-#### **Healthcare System APIs**
-- **FHIR Compliance** - Fast Healthcare Interoperability Resources
-- **HL7 Standards** - Healthcare data exchange standards  
-- **Electronic Health Records (EHR)** - Integration with major EHR systems
-- **Laboratory Systems** - Direct lab result integration
-- **Pharmacy Systems** - Medication verification and interaction checking
+#### **AI Services**
+- **Anthropic Claude** - Primary AI provider
+- **Batch API** - Document processing
+- **Streaming API** - Real-time chat responses
 
 #### **Third-Party Services**
 ```yaml
 Integrations:
-  AI Services:
-    - Hugging Face Model Hub
-    - OpenAI GPT models
-    - Google Healthcare AI
-    
-  Healthcare APIs:
-    - Drug interaction databases
-    - Medical reference APIs
-    - Clinical decision support tools
-    
-  Compliance Services:
-    - HIPAA compliance monitoring
+  Communication:
+    - SendGrid (email)
+    - Twilio (SMS)
+
+  Healthcare:
+    - Blue Button (Medicare data)
+    - FHIR-compliant APIs
+    - Lab integration systems
+
+  Security:
+    - Google KMS (key management)
     - Audit trail services
-    - Data governance platforms
 ```
 
 ---
 
-## 📈 **Future Architecture Considerations**
+## **Development Architecture**
 
-### 🔮 **Scalability Roadmap**
+### **Development Workflow**
+```bash
+# Backend development
+cd apps/backend-api && npm run dev      # Port 5000
+
+# Frontend development
+cd apps/frontend-vite && npm run dev    # Port 3000
+
+# Log monitoring
+tail -f apps/backend-api/logs/server-errors.log
+```
+
+### **Critical Development Rules**
+1. **NPM processes** - NEVER KILL (destroys user sessions)
+2. **Backend** - Auto-restarts via nodemon
+3. **Frontend** - Auto-refreshes via Vite HMR
+4. **Testing** - Through GUI only, not scripts
+5. **Database Access** - ALL operations through SecureDataAccess
+
+---
+
+## **Future Architecture Considerations**
+
+### **Scalability Roadmap**
 - **Edge Computing** - Regional AI processing for reduced latency
-- **Blockchain Integration** - Immutable medical record management
-- **IoT Device Integration** - Real-time patient monitoring data
 - **Advanced Analytics** - Machine learning for population health insights
+- **IoT Device Integration** - Real-time patient monitoring data
+- **Function Expansion** - Target 5000+ medical functions
 
-### 🌍 **Global Expansion Architecture**
+### **Global Expansion Architecture**
 - **Multi-Region Deployment** - Global infrastructure presence
-- **Localization Framework** - Multi-language and cultural adaptation
+- **Localization Framework** - Additional language support
 - **Regulatory Compliance** - Region-specific healthcare regulations
 - **Data Residency** - Local data storage requirements compliance
 
 ---
 
 <div align="center">
-  
-  **💬 IntelliCare Architecture - Agent-First Conversational Healthcare**
-  
-  *Revolutionary medical chat platform where intelligent agents deliver personalized healthcare through natural conversation* 🤖
-  
+
+  **IntelliCare Architecture - Enterprise Medical AI Platform**
+
+  *Built on Claude Sonnet 4.5 for intelligent healthcare management*
+
 </div>

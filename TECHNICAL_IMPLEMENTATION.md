@@ -1,10 +1,10 @@
 # IntelliCare Platform - Technical Implementation Guide
 
-## Project Structure Migration
+## Project Structure
 
-### Source Repository Structure
+### Actual Repository Structure
 ```
-C:\Users\Eran Gross\IntelliCare\
+/home/erangross/Development/IntelliCare/
 ├── apps/
 │   ├── backend-api/
 │   │   ├── services/          (200+ service files)
@@ -13,6 +13,8 @@ C:\Users\Eran Gross\IntelliCare\
 │   │   ├── middleware/        (Express middleware)
 │   │   ├── utils/             (Utility functions)
 │   │   ├── config/            (Configuration files)
+│   │   ├── scripts/           (Utility scripts)
+│   │   ├── logs/              (Application logs)
 │   │   └── server.js          (Main server file)
 │   └── frontend-vite/
 │       └── src/
@@ -27,78 +29,101 @@ C:\Users\Eran Gross\IntelliCare\
 └── scripts/                   (Build & deployment scripts)
 ```
 
-## Key Services to Migrate
+## Key Services Implementation
 
 ### Priority 1: Core AI Services
 ```javascript
 // Essential AI service files
-- services/agentServiceV4.js (1.2MB) - Main AI orchestration
-- services/agentServiceClaude.js - Claude Sonnet 4 integration
-- services/claudeMedicalService.js - Document processing with Claude
-- services/generatedMedicalFunctions.js - Medical operations
+apps/backend-api/services/
+├── agentServiceV4.js (1.2MB)          - Main AI orchestration
+├── agentServiceClaude.js              - Claude Sonnet 4.5 integration
+├── claudeBatchProcessor.js            - Batch document processing
+├── documentAnalysisService.js         - Document analysis
+├── semanticFunctionSelector.js        - Function selection (99.6% reduction)
+├── claudeTwoStageSelector.js          - Two-stage selection
+└── generatedMedicalFunctions.js       - 2000+ medical operations
 ```
 
 ### Priority 2: Authentication & Security
 ```javascript
 // Critical security services
-- services/authAIService.js - AI-powered authentication
-- services/secureDataAccess.js - Data access control
-- services/hipaaComplianceService.js - HIPAA compliance
-- services/secureSessionManager.js - Session management
+apps/backend-api/services/
+├── secureDataAccess.js                - ALL database operations
+├── secureSessionManager.js            - Server-side sessions
+├── serviceAccountManager.js           - Service authentication
+├── hipaaComplianceService.js          - HIPAA compliance
+└── auditLogService.js                 - Complete audit trails
 ```
 
 ### Priority 3: Medical Operations
 ```javascript
 // Core medical functionality
-- services/medicalDataService.js - Medical data management
-- services/patientDataService.js - Patient operations
-- services/clinicalDecisionSupport.js - Clinical support
-- services/documentAnalysisService.js - Document processing
+apps/backend-api/services/
+├── medicalDataService.js              - Medical data management
+├── medicalCollectionsService.js       - 245+ collections
+├── patientDataService.js              - Patient operations
+├── clinicalDecisionSupport.js         - Clinical support
+└── prescriptionGenerator.js           - Prescription management
 ```
 
 ## API Routes Implementation
 
 ### Core Route Structure
 ```javascript
-// Main API route files to implement
-const routes = {
-  '/api/agent': 'routes/agent.js',           // AI interactions
-  '/api/auth': 'routes/auth.js',             // Authentication
-  '/api/patients': 'routes/patients.js',     // Patient management
-  '/api/documents': 'routes/documents.js',   // Document handling
-  '/api/medical': 'routes/medical.js',       // Medical operations
-  '/api/clinics': 'routes/clinics.js',       // Clinic management
-  '/api/appointments': 'routes/appointments.js', // Scheduling
-  '/api/billing': 'routes/billing.js'        // Billing operations
-};
+// Main API route files
+apps/backend-api/routes/
+├── agent.js                 - AI interactions (/api/agent/*)
+├── auth.js                  - Authentication (/api/auth/*)
+├── patients.js              - Patient management (/api/patients/*)
+├── documents.js             - Document handling (/api/documents/*)
+├── appointments.js          - Scheduling (/api/appointments/*)
+├── clinics.js               - Clinic management (/api/clinics/*)
+└── medical.js               - Medical operations (/api/medical/*)
 ```
 
-## Frontend Components Migration
+## Frontend Components Implementation
 
 ### Essential Components
 ```javascript
-// Priority components to migrate
-const components = [
-  'ChatAuthAI.js',          // AI chat interface
-  'PatientDetail.js',       // Patient management
-  'PatientList.js',         // Patient listing
-  'Diagnosis.js',           // Diagnosis interface
-  'DocumentViewer.js',      // Document viewing
-  'MedicalHistoryModal.js', // Medical history
-  'UserManagement.js',      // User administration
-  'ClinicManagementDashboard.js' // Clinic dashboard
-];
+// Priority components
+apps/frontend-vite/src/components/
+├── ChatAuthAI.js                      - AI chat interface
+├── PatientDetail.js                   - Patient management
+├── PatientList.js                     - Patient listing
+├── Diagnosis.js                       - Diagnosis interface
+├── DocumentViewer.js                  - Document viewing
+├── MedicalHistoryModal.js             - Medical history
+├── UserManagement.js                  - User administration
+├── ClinicManagementDashboard.js       - Clinic dashboard
+└── NotificationCenter.js              - Real-time notifications
 ```
 
 ## Database Configuration
 
-### MongoDB Schema Setup
+### MongoDB Multi-Tenant Setup
 ```javascript
-// Essential collections to create
+// Database structure
+Global Database: intellicare_practice_global
+├── ServiceAccounts                     - Service authentication
+├── Practices                           - Tenant records
+└── Global Configuration
+
+Practice Databases: intellicare_practice_{subdomain}
+├── users                               - User accounts (per practice)
+├── patients                            - Patient records
+├── appointments                        - Scheduled appointments
+├── documents                           - Medical documents
+├── chat_messages                       - AI chat history
+├── prescriptions                       - Prescription records
+├── diagnoses                           - Diagnosis history
+├── auditLogs                           - System audit trail
+└── [245+ medical data collections]
+
+// Essential collections
 const collections = {
   patients: {
-    indexes: ['patientId', 'clinicId', 'email'],
-    sharding: { key: 'clinicId' }
+    indexes: ['patientId', 'practiceId', 'email'],
+    sharding: { key: 'practiceId' }
   },
   documents: {
     indexes: ['patientId', 'type', 'uploadDate'],
@@ -106,13 +131,32 @@ const collections = {
   },
   appointments: {
     indexes: ['patientId', 'providerId', 'date'],
-    compound: [['clinicId', 'date']]
+    compound: [['practiceId', 'date']]
   },
   auditLogs: {
     indexes: ['userId', 'action', 'timestamp'],
     capped: { size: 10737418240 } // 10GB
   }
 };
+```
+
+### Database Security Configuration
+```javascript
+// MongoDB authentication configuration
+{
+  security: {
+    authorization: "enabled",
+    enableLocalhostAuthBypass: 0  // CRITICAL: Localhost bypass DISABLED
+  },
+  net: {
+    port: 27017,
+    bindIp: "127.0.0.1"
+  }
+}
+
+// Application connection
+const connectionString =
+  "mongodb://intellicare_app:[PASSWORD]@localhost:27017/intellicare_practice_global?authSource=admin";
 ```
 
 ## Service Dependencies
@@ -143,82 +187,75 @@ const collections = {
 
 ### Development Environment
 ```bash
-# Create .env file with required variables
+# Backend .env file (apps/backend-api/.env)
 NODE_ENV=development
-PORT=3001
-MONGODB_URI=mongodb://localhost:27017/intellicare
+PORT=5000
+MONGODB_URI=mongodb://intellicare_app:[PASSWORD]@localhost:27017/intellicare_practice_global?authSource=admin
 REDIS_URL=redis://localhost:6379
-JWT_SECRET=development_secret_key
 ENCRYPTION_KEY=32_byte_encryption_key_here
 SESSION_SECRET=session_secret_key
-ANTHROPIC_API_KEY=your_claude_sonnet_4_api_key
+
+# API keys stored in KMS only (never in .env):
+# - ANTHROPIC_API_KEY
+# - SENDGRID_API_KEY
+# - TWILIO_ACCOUNT_SID
+# - TWILIO_AUTH_TOKEN
 ```
 
 ### Production Environment
 ```bash
 # Production configuration
 NODE_ENV=production
-PORT=443
-MONGODB_URI=mongodb+srv://cluster.mongodb.net/intellicare
-REDIS_URL=redis://redis-cluster:6379
+PORT=5000
+DOMAIN=intellicare.health
+MONGODB_URI=mongodb://intellicare_app:[PASSWORD]@localhost:27017/
+REDIS_URL=redis://localhost:6379
 USE_SSL=true
-SSL_CERT_PATH=/etc/ssl/certs/intellicare.crt
-SSL_KEY_PATH=/etc/ssl/private/intellicare.key
 ```
 
-## Migration Steps
+## Implementation Guide
 
-### Step 1: Initialize Project Structure
+### Step 1: Clone and Setup
 ```bash
-# Create directory structure
-mkdir -p IntelliCare-Platform/{backend,frontend,libs,docs,scripts}
-mkdir -p IntelliCare-Platform/backend/{services,routes,models,middleware,utils}
-mkdir -p IntelliCare-Platform/frontend/src/{components,services,hooks,pages}
+# Clone repository (private)
+git clone [private-repo-url] IntelliCare
+cd IntelliCare
+
+# Install backend dependencies
+cd apps/backend-api
+npm install
+
+# Install frontend dependencies
+cd ../frontend-vite
+npm install
 ```
 
-### Step 2: Copy Core Files
+### Step 2: Configure Database
 ```bash
-# Copy backend services
-cp -r C:/Users/Eran\ Gross/IntelliCare/apps/backend-api/services/* backend/services/
-cp -r C:/Users/Eran\ Gross/IntelliCare/apps/backend-api/routes/* backend/routes/
-cp -r C:/Users/Eran\ Gross/IntelliCare/apps/backend-api/models/* backend/models/
+# Ensure MongoDB is running with authentication
+sudo systemctl status mongod
 
-# Copy frontend components
-cp -r C:/Users/Eran\ Gross/IntelliCare/apps/frontend-vite/src/* frontend/src/
+# Database credentials are in KMS
+# Connection managed by secureDataAccess.js
 ```
 
-### Step 3: Install Dependencies
+### Step 3: Start Development Servers
 ```bash
-# Backend dependencies
-cd backend && npm install
+# Terminal 1: Backend (auto-restart via nodemon)
+cd apps/backend-api
+npm run dev                # Port 5000
 
-# Frontend dependencies
-cd ../frontend && npm install
+# Terminal 2: Frontend (Vite HMR)
+cd apps/frontend-vite
+npm run dev                # Port 3000
+
+# Terminal 3: Log monitoring
+tail -f apps/backend-api/logs/server-errors.log
 ```
 
-### Step 4: Configure Database
+### Step 4: Main Server Implementation
 ```javascript
-// backend/config/database.js
-const { MongoClient } = require('mongodb');
-
-const initializeDatabase = async () => {
-  const client = new MongoClient(process.env.MONGODB_URI);
-  await client.connect();
-  
-  const db = client.db(process.env.MONGODB_DB_NAME);
-  
-  // Create indexes
-  await db.collection('patients').createIndex({ patientId: 1 });
-  await db.collection('documents').createIndex({ patientId: 1, uploadDate: -1 });
-  await db.collection('appointments').createIndex({ date: 1, clinicId: 1 });
-  
-  return db;
-};
-```
-
-### Step 5: Setup Main Server
-```javascript
-// backend/server.js
+// apps/backend-api/server.js
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -230,7 +267,10 @@ const app = express();
 
 // Middleware
 app.use(helmet());
-app.use(cors());
+app.use(cors({
+  origin: process.env.ALLOWED_ORIGINS?.split(','),
+  credentials: true
+}));
 app.use(express.json({ limit: '50mb' }));
 
 // Initialize services
@@ -238,8 +278,8 @@ const startServer = async () => {
   const db = await initializeDatabase();
   await loadServices(db);
   setupRoutes(app, db);
-  
-  const port = process.env.PORT || 3001;
+
+  const port = process.env.PORT || 5000;
   app.listen(port, () => {
     console.log(`IntelliCare Platform running on port ${port}`);
   });
@@ -252,7 +292,7 @@ startServer();
 
 ### Unit Test Example
 ```javascript
-// tests/services/medicalDataService.test.js
+// apps/backend-api/tests/services/medicalDataService.test.js
 const { expect } = require('chai');
 const medicalDataService = require('../../services/medicalDataService');
 
@@ -269,21 +309,21 @@ describe('Medical Data Service', () => {
 
 ### Integration Test Example
 ```javascript
-// tests/integration/patient-flow.test.js
+// apps/backend-api/tests/integration/patient-flow.test.js
 describe('Patient Management Flow', () => {
   it('should complete patient registration flow', async () => {
     // Create patient
     const patient = await api.post('/api/patients', patientData);
-    
+
     // Upload document
     const document = await api.post(`/api/documents/${patient.id}`, documentData);
-    
+
     // Schedule appointment
     const appointment = await api.post('/api/appointments', {
       patientId: patient.id,
       date: '2024-01-15'
     });
-    
+
     expect(appointment.status).to.equal('scheduled');
   });
 });
@@ -301,11 +341,11 @@ const cacheService = {
   async get(key) {
     return await client.get(key);
   },
-  
+
   async set(key, value, ttl = 3600) {
     await client.setEx(key, ttl, JSON.stringify(value));
   },
-  
+
   async invalidate(pattern) {
     const keys = await client.keys(pattern);
     if (keys.length) await client.del(keys);
@@ -315,7 +355,7 @@ const cacheService = {
 
 ### Database Optimization
 ```javascript
-// Implement connection pooling
+// Connection pooling
 const mongoOptions = {
   maxPoolSize: 100,
   minPoolSize: 10,
@@ -324,14 +364,14 @@ const mongoOptions = {
 };
 
 // Use aggregation pipelines for complex queries
-const getPatientStats = async (clinicId) => {
-  return await db.collection('patients').aggregate([
-    { $match: { clinicId } },
+const getPatientStats = async (practiceId) => {
+  return await SecureDataAccess.aggregate('patients', [
+    { $match: { practiceId } },
     { $group: {
       _id: '$status',
       count: { $sum: 1 }
     }}
-  ]).toArray();
+  ], context);
 };
 ```
 
@@ -347,7 +387,7 @@ const securityMiddleware = [
   helmet(),
   rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100 // limit each IP to 100 requests
+    max: 100 // limit each IP to 100 requests per windowMs
   }),
   // CORS configuration
   cors({
@@ -357,108 +397,198 @@ const securityMiddleware = [
 ];
 ```
 
-### Data Encryption
+### Critical Security Rules
 ```javascript
-// utils/encryption.js
-const crypto = require('crypto');
+// ALL database operations MUST use SecureDataAccess
+// NEVER use direct MongoDB operations
 
-const encrypt = (text) => {
-  const iv = crypto.randomBytes(16);
-  const cipher = crypto.createCipheriv(
-    'aes-256-cbc',
-    Buffer.from(process.env.ENCRYPTION_KEY, 'hex'),
-    iv
-  );
-  
-  let encrypted = cipher.update(text, 'utf8', 'hex');
-  encrypted += cipher.final('hex');
-  
-  return iv.toString('hex') + ':' + encrypted;
-};
+// CORRECT:
+await SecureDataAccess.query('patients', { id: patientId }, {}, context);
+
+// FORBIDDEN:
+await Patient.findById(patientId);  // NEVER DO THIS
 ```
 
 ## Monitoring & Logging
 
 ### Application Monitoring
 ```javascript
-// monitoring/metrics.js
-const prometheus = require('prom-client');
+// services/loggingService.js
+const winston = require('winston');
 
-const httpRequestDuration = new prometheus.Histogram({
-  name: 'http_request_duration_seconds',
-  help: 'Duration of HTTP requests in seconds',
-  labelNames: ['method', 'route', 'status']
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.json(),
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
 });
 
 // Track API performance
 app.use((req, res, next) => {
-  const end = httpRequestDuration.startTimer();
+  const start = Date.now();
   res.on('finish', () => {
-    end({ method: req.method, route: req.path, status: res.statusCode });
+    const duration = Date.now() - start;
+    logger.info({
+      method: req.method,
+      path: req.path,
+      status: res.statusCode,
+      duration
+    });
   });
   next();
 });
 ```
 
-## Deployment Configuration
+### Log Analysis Tools
+```bash
+# Use lnav for intelligent log analysis
+lnav apps/backend-api/logs/
 
-### Docker Setup
-```dockerfile
-# Dockerfile
-FROM node:18-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci --only=production
-COPY . .
-EXPOSE 3001
-CMD ["node", "server.js"]
+# Inside lnav:
+:filter-in error|warn
+;SELECT log_msg, COUNT(*) FROM logs WHERE log_level='ERROR' GROUP BY log_msg
+
+# Use ripgrep for code search
+rg "SecureDataAccess" --type js
+
+# Use htop for system monitoring
+htop
 ```
 
-### Docker Compose
-```yaml
-# docker-compose.yml
-version: '3.8'
-services:
-  backend:
-    build: ./backend
-    ports:
-      - "3001:3001"
-    environment:
-      - NODE_ENV=production
-    depends_on:
-      - mongodb
-      - redis
-  
-  frontend:
-    build: ./frontend
-    ports:
-      - "3000:3000"
-    depends_on:
-      - backend
-  
-  mongodb:
-    image: mongo:6
-    volumes:
-      - mongo-data:/data/db
-  
-  redis:
-    image: redis:7-alpine
-    
-volumes:
-  mongo-data:
+## Deployment
+
+### Development Deployment
+```bash
+# Start all services
+cd /home/erangross/Development/IntelliCare
+
+# Backend (Terminal 1)
+cd apps/backend-api && npm run dev
+
+# Frontend (Terminal 2)
+cd apps/frontend-vite && npm run dev
 ```
 
-## Next Steps
+### Production Deployment
+```bash
+# Production deployment on intellicare.health
+# Services managed via systemd or PM2
+pm2 start apps/backend-api/server.js --name intellicare-backend
+pm2 startup
+pm2 save
+```
 
-1. **Review source code** in `C:\Users\Eran Gross\IntelliCare`
-2. **Set up development environment** with required tools
-3. **Create database schema** and indexes
-4. **Migrate core services** starting with AI and authentication
-5. **Implement API routes** for essential operations
-6. **Build frontend components** for user interface
-7. **Configure security** and compliance features
-8. **Set up testing** framework and write tests
-9. **Deploy** to staging environment
-10. **Performance testing** and optimization
+## Critical Implementation Rules
 
-This technical guide provides the foundation for migrating the IntelliCare codebase to the IntelliCare-Platform repository. Follow the implementation steps sequentially for best results.
+### Development Rules
+1. **NEVER kill NPM processes** - Destroys user sessions
+2. **Backend auto-restarts** - Via nodemon, don't restart manually
+3. **Frontend auto-refreshes** - Via Vite HMR
+4. **Test through GUI** - Not just API scripts
+5. **Research before modifying** - Understand full context
+
+### Security Rules
+1. **ALL database operations** - Use SecureDataAccess ONLY
+2. **Multi-tenant isolation** - SACRED rule, never bypass
+3. **No direct queries** - Always include context
+4. **KMS for secrets** - Never plain text
+5. **Audit everything** - Complete logging required
+
+### Code Quality Rules
+1. **Fix root causes** - No workarounds
+2. **Security first** - All operations through SecureDataAccess
+3. **Document changes** - Update memory.md
+4. **Test thoroughly** - Use verification scripts
+5. **Monitor logs** - Use lnav for analysis
+
+## AI Features Implementation
+
+### Function Selection System
+```javascript
+// Semantic function selection (99.6% token reduction)
+const semanticFunctionSelector = require('./services/semanticFunctionSelector');
+
+// Two-stage selection process
+const selectedFunctions = await semanticFunctionSelector.select({
+  userQuery: "Show me diabetic patients",
+  availableFunctions: 2000,  // Total functions
+  context: conversationContext
+});
+// Returns: ~10 relevant functions (99.6% reduction)
+```
+
+### Batch Document Processing
+```javascript
+// Batch processing with Claude Sonnet 4.5
+const claudeBatchProcessor = require('./services/claudeBatchProcessor');
+
+// Process multiple documents (50% cost savings)
+const result = await claudeBatchProcessor.processBatch({
+  documents: documentArray,
+  patientId: patientId,
+  extractionSchema: medicalSchema
+});
+// Extracts to 245+ medical collections
+```
+
+## Database Backup & Restore
+
+### Backup Procedure
+```bash
+# Automated backup script
+node apps/backend-api/scripts/backupDatabase.js
+
+# Output location:
+# /home/erangross/Development/IntelliCare/apps/backups/mongodb-backup-YYYY-MM-DD
+```
+
+### Restore Procedure
+```bash
+# Restore from backup
+mongorestore \
+  --uri="mongodb://intellicare_admin:[PASSWORD]@localhost:27017/?authSource=admin" \
+  --gzip \
+  "/home/erangross/Development/IntelliCare/apps/backups/mongodb-backup-2025-10-01"
+```
+
+## Troubleshooting
+
+### Common Issues
+
+**Issue: MongoDB authentication failed**
+```bash
+# Check MongoDB is running
+sudo systemctl status mongod
+
+# Verify credentials in KMS
+# Never use plain text credentials
+```
+
+**Issue: Port already in use**
+```bash
+# Find process using port
+sudo netstat -tulpn | grep :5000
+
+# Don't kill NPM processes - they manage sessions
+```
+
+**Issue: Frontend not updating**
+```bash
+# Vite HMR handles auto-refresh
+# If needed, clear browser cache
+# Don't restart dev server unnecessarily
+```
+
+## Support Resources
+
+- **Project Location**: `/home/erangross/Development/IntelliCare`
+- **Backend**: `apps/backend-api/`
+- **Frontend**: `apps/frontend-vite/`
+- **Documentation**: `docs/` directory
+- **Scripts**: `apps/backend-api/scripts/`
+- **Production Domain**: `intellicare.health`
+- **Memory File**: `/home/erangross/Development/IntelliCare/CLAUDE.md`
+
+This technical guide provides implementation details based on the actual IntelliCare codebase structure and architecture.
