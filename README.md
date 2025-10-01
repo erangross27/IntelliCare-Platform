@@ -15,7 +15,7 @@
 
   <!-- Call to Action -->
   <p>
-    <img src="https://img.shields.io/badge/Production%20Ready%20Late%202025-FFD700?style=for-the-badge&labelColor=FF8C00" alt="Production Ready Late 2025"/>
+    <img src="https://img.shields.io/badge/Active%20Development-FFD700?style=for-the-badge&labelColor=FF8C00" alt="Active Development"/>
     <img src="https://img.shields.io/badge/Enterprise%20Platform-00CED1?style=for-the-badge&labelColor=008B8B" alt="Enterprise Platform"/>
   </p>
   
@@ -23,7 +23,7 @@
   
   **A comprehensive multi-tenant enterprise medical platform combining traditional healthcare management with cutting-edge AI capabilities. Features intelligent medical assistants powered by Anthropic Claude Sonnet 4.5 for document analysis, natural language processing, and clinical decision support.**
 
-  *Currently in active development - Production launch planned for late 2025*
+  *Currently in active development - Building the foundation for next-generation healthcare AI*
 
 </div>
 
@@ -175,12 +175,13 @@ AI: Lab orders created and SMS reminders scheduled.
 - **Complete Security** - HIPAA-compliant with audit trails
 - **Hebrew + English** - Full internationalization
 
-### **Active Development**
-- **Core Platform** - Building foundation and core features (2025)
-- **Mobile Apps** - iOS/Android native apps (Late 2025)
-- **Voice Interface** - Speak instead of type (Late 2025)
-- **Video Consultations** - Integrated telemedicine (2026)
-- **AI Training** - Custom models per specialty (2026)
+### **Active Development Roadmap**
+- **Core Platform** - Building foundation and core features
+- **2000+ Medical Functions** - Continuously expanding capabilities
+- **AI Integration** - Advanced Claude Sonnet 4.5 + Haiku implementation
+- **Security Framework** - HIPAA-compliant architecture
+- **Multi-Tenant System** - Complete clinic isolation and scalability
+- **Future Features** - Mobile apps, voice interface, video consultations (timeline TBD)
 
 ## **Investment Opportunity**
 
@@ -221,7 +222,7 @@ Traditional medical software with hundreds of buttons and forms is obsolete. Int
 - **Demo Available**: Development system demonstration for serious investors
 - **Technical Deep Dive**: Available under NDA
 - **Implementation Docs**: See INTELLICARE_CODE_UPDATE.md, TECHNICAL_IMPLEMENTATION.md, and FEATURE_REFERENCE.md
-- **Production Launch**: Late 2025
+- **Status**: Long-term development project, no production timeline set
 
 ---
 
