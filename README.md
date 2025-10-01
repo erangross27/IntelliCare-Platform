@@ -7,23 +7,23 @@
   
   <!-- Status Badges -->
   <p>
-    <img src="https://img.shields.io/badge/Live%20in%20Production-brightgreen?style=for-the-badge" alt="Live in Production"/>
+    <img src="https://img.shields.io/badge/In%20Development-orange?style=for-the-badge" alt="In Development"/>
     <img src="https://img.shields.io/badge/Agentic%20AI-blue?style=for-the-badge" alt="Agentic AI"/>
     <img src="https://img.shields.io/badge/Multi--Tenant-red?style=for-the-badge" alt="Multi-Tenant"/>
-    <img src="https://img.shields.io/badge/HIPAA%20Compliant-purple?style=for-the-badge" alt="HIPAA Compliant"/>
+    <img src="https://img.shields.io/badge/HIPAA%20Ready-purple?style=for-the-badge" alt="HIPAA Ready"/>
   </p>
 
   <!-- Call to Action -->
   <p>
-    <img src="https://img.shields.io/badge/Enterprise%20Grade-FFD700?style=for-the-badge&labelColor=FF8C00" alt="Enterprise Grade"/>
-    <img src="https://img.shields.io/badge/Global%20Healthcare%20Platform-00CED1?style=for-the-badge&labelColor=008B8B" alt="Global Healthcare"/>
+    <img src="https://img.shields.io/badge/Production%20Ready%20Late%202025-FFD700?style=for-the-badge&labelColor=FF8C00" alt="Production Ready Late 2025"/>
+    <img src="https://img.shields.io/badge/Enterprise%20Platform-00CED1?style=for-the-badge&labelColor=008B8B" alt="Enterprise Platform"/>
   </p>
   
   ---
   
   **A comprehensive multi-tenant enterprise medical platform combining traditional healthcare management with cutting-edge AI capabilities. Features intelligent medical assistants powered by Anthropic Claude Sonnet 4.5 for document analysis, natural language processing, and clinical decision support.**
 
-  *Built for medical institutions with enterprise-grade security and HIPAA compliance*
+  *Currently in active development - Production launch planned for late 2025*
 
 </div>
 
@@ -165,7 +165,7 @@ AI: Lab orders created and SMS reminders scheduled.
 ## **Current Status**
 
 ### **What's Built and Running**
-- **Live Production System** - Actively serving medical institutions
+- **Development Platform** - Active development and testing environment
 - **2000+ Medical Functions** - Complete medical workflow coverage (actively expanding)
 - **200+ Backend Services** - Comprehensive healthcare operations
 - **100+ UI Components** - Full-featured React component library
@@ -176,10 +176,11 @@ AI: Lab orders created and SMS reminders scheduled.
 - **Hebrew + English** - Full internationalization
 
 ### **Active Development**
-- **Mobile Apps** - iOS/Android native apps (Q1 2025)
-- **Voice Interface** - Speak instead of type (Q1 2025)
-- **Video Consultations** - Integrated telemedicine (Q2 2025)
-- **AI Training** - Custom models per specialty (Q2 2025)
+- **Core Platform** - Building foundation and core features (2025)
+- **Mobile Apps** - iOS/Android native apps (Late 2025)
+- **Voice Interface** - Speak instead of type (Late 2025)
+- **Video Consultations** - Integrated telemedicine (2026)
+- **AI Training** - Custom models per specialty (2026)
 
 ## **Investment Opportunity**
 
@@ -217,9 +218,10 @@ Traditional medical software with hundreds of buttons and forms is obsolete. Int
 
 ### **Project Links**
 - **Private Repo**: Active development (this documentation is public showcase)
-- **Demo Available**: Live system demonstration for serious investors
+- **Demo Available**: Development system demonstration for serious investors
 - **Technical Deep Dive**: Available under NDA
 - **Implementation Docs**: See INTELLICARE_CODE_UPDATE.md, TECHNICAL_IMPLEMENTATION.md, and FEATURE_REFERENCE.md
+- **Production Launch**: Late 2025
 
 ---
 
@@ -239,4 +241,4 @@ Traditional medical software with hundreds of buttons and forms is obsolete. Int
 
 This is a public documentation repository showcasing the IntelliCare platform. The actual implementation code is in a private repository under active development. All architectural designs, concepts, and intellectual property are protected.
 
-**© 2024 IntelliCare Platform. All rights reserved.**
+**© 2025 IntelliCare Platform. All rights reserved.**
