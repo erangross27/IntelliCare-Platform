@@ -54,7 +54,7 @@ IntelliCare is an enterprise medical platform that combines **traditional health
 <td width="50%">
 
 ### **Enterprise Multi-Tenant Platform**
-- **Complete Clinic Isolation** - Separate database per institution
+- **Complete Practice Isolation** - Separate database per institution
 - **Global Deployment** - Supports US and Israeli healthcare systems
 - **Unlimited Scale** - From solo practices to hospital networks
 - **White-Label Ready** - Custom branding per institution
@@ -141,7 +141,7 @@ AI: Lab orders created and SMS reminders scheduled.
 ## **Target Market**
 
 ### **Primary Customers**
-- **Medical Clinics** - 10-50 providers
+- **Medical Practices** - 10-50 providers
 - **Hospital Networks** - 100+ providers
 - **Specialty Practices** - Focused medical domains
 - **Urgent Care Centers** - High-volume facilities
@@ -170,7 +170,7 @@ AI: Lab orders created and SMS reminders scheduled.
 - **200+ Backend Services** - Comprehensive healthcare operations
 - **100+ UI Components** - Full-featured React component library
 - **70+ API Endpoints** - Complete RESTful API coverage
-- **Multi-Tenant Platform** - Unlimited clinic support
+- **Multi-Tenant Platform** - Unlimited practice support
 - **Advanced AI System** - Claude Sonnet 4.5 + Haiku powering all capabilities
 - **Complete Security** - HIPAA-compliant with audit trails
 - **Hebrew + English** - Full internationalization
@@ -180,7 +180,7 @@ AI: Lab orders created and SMS reminders scheduled.
 - **2000+ Medical Functions** - Continuously expanding capabilities
 - **AI Integration** - Advanced Claude Sonnet 4.5 + Haiku implementation
 - **Security Framework** - HIPAA-compliant architecture
-- **Multi-Tenant System** - Complete clinic isolation and scalability
+- **Multi-Tenant System** - Complete practice isolation and scalability
 - **Future Features** - Mobile apps, voice interface, video consultations (timeline TBD)
 
 ## **Investment Opportunity**
