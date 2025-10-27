@@ -5,7 +5,7 @@
 
 # IntelliCare
 
-### *Transforming Healthcare Through Conversational AI*
+### *Transforming Healthcare Through Agentic AI*
 
 <!-- Status Badges -->
 <p>
@@ -17,7 +17,7 @@
 
 ---
 
-**The world's first AI-first healthcare platform where medical professionals accomplish everything through natural conversation with an intelligent agent.**
+**The world's first agentic AI healthcare platform where medical professionals accomplish everything through natural conversation with an autonomous intelligent agent.**
 
 *Eliminating complexity. Maximizing efficiency. Reimagining healthcare delivery.*
 
@@ -31,7 +31,7 @@ Healthcare providers waste **6+ hours daily** navigating complex software system
 
 ## **The Solution**
 
-IntelliCare is an **AI-first conversational healthcare platform** where doctors simply talk to an intelligent agent that handles everything—from scheduling appointments to analyzing medical records, prescribing medications to generating insights.
+IntelliCare is an **agentic AI healthcare platform** where doctors simply talk to an autonomous intelligent agent that handles everything—from scheduling appointments to analyzing medical records, prescribing medications to generating insights. The agent autonomously decides which tools to use, chains multiple operations together, and completes complex workflows without human intervention.
 
 ### **How It Works**
 
@@ -52,9 +52,9 @@ IntelliCare: Done. Lab orders placed and SMS reminders sent to all 5 patients.
 
 ## **What Makes IntelliCare Revolutionary**
 
-### **One Intelligent Agent. Infinite Capabilities.**
+### **One Autonomous Agent. Infinite Capabilities.**
 
-The IntelliCare AI agent autonomously handles **2,000+ healthcare operations** through natural conversation:
+The IntelliCare agentic AI autonomously handles **2,000+ healthcare operations** through natural conversation, intelligently chaining tools and making decisions without human intervention:
 
 <table>
 <tr>
@@ -85,9 +85,9 @@ The IntelliCare AI agent autonomously handles **2,000+ healthcare operations** t
 </tr>
 </table>
 
-### **Powered by 2,000+ Medical Functions**
+### **Powered by Agentic AI with 2,000+ Medical Functions**
 
-Our intelligent agent leverages over **2,000 specialized medical functions** across **128 backend services** (and growing daily) to handle any healthcare workflow you can imagine—automatically.
+Our autonomous agent leverages over **2,000 specialized medical functions** across **128 backend services** (and growing daily) to handle any healthcare workflow you can imagine. The agent uses a **two-stage agentic architecture** where it first selects relevant tools, then autonomously chains them together to complete complex multi-step tasks—automatically.
 
 **Latest Capabilities:**
 - ✅ **78 Specialized Medical Templates** - Advanced document rendering with search, copy, and PDF export
@@ -259,7 +259,7 @@ We're looking for visionary investors and partners who understand that the futur
 ✅ **2,000+ Medical Functions** - Continuously expanding
 ✅ **78 Document Templates** - Specialized medical document renderers
 ✅ **190+ Medical Collections** - Deep medical data organization
-✅ **Conversational AI Engine** - Powered by Claude Sonnet 4.5
+✅ **Agentic AI Engine** - Two-stage autonomous agent powered by Claude Sonnet 4.5
 ✅ **Multi-Tenant Architecture** - Enterprise-ready infrastructure
 ✅ **HIPAA Compliance Framework** - Security and privacy built-in
 ✅ **Dual Language Support** - Hebrew and English with RTL
@@ -330,7 +330,7 @@ Available for qualified investors and strategic partners. Development platform d
 <div align="center">
 
 **IntelliCare**
-*Transforming healthcare through conversational AI*
+*Transforming healthcare through agentic AI*
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer" width="100%"/>
 
