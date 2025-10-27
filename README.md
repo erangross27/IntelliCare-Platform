@@ -54,7 +54,7 @@ IntelliCare: Done. Lab orders placed and SMS reminders sent to all 5 patients.
 
 ### **One Intelligent Agent. Infinite Capabilities.**
 
-The IntelliCare AI agent autonomously handles **900+ healthcare operations** through natural conversation:
+The IntelliCare AI agent autonomously handles **2,000+ healthcare operations** through natural conversation:
 
 <table>
 <tr>
@@ -85,9 +85,15 @@ The IntelliCare AI agent autonomously handles **900+ healthcare operations** thr
 </tr>
 </table>
 
-### **Powered by 2000+ Medical Functions**
+### **Powered by 2,000+ Medical Functions**
 
-Our intelligent agent leverages over **2000 specialized medical functions** (and growing daily) to handle any healthcare workflow you can imagine—automatically.
+Our intelligent agent leverages over **2,000 specialized medical functions** across **128 backend services** (and growing daily) to handle any healthcare workflow you can imagine—automatically.
+
+**Latest Capabilities:**
+- ✅ **78 Specialized Medical Templates** - Advanced document rendering with search, copy, and PDF export
+- ✅ **35+ Medical Specialties** - Comprehensive coverage from neurology to allergy/immunology
+- ✅ **190+ Medical Collections** - Deep data organization across all medical domains
+- ✅ **Real-Time AI Streaming** - Live responses with artifact panel visualization
 
 ---
 
@@ -171,11 +177,13 @@ Cardiology, Oncology, etc.
 
 ### **Barriers to Entry**
 
-- **900+ specialized services** requiring deep healthcare + AI expertise
+- **2,000+ specialized medical functions** across 128 services requiring deep healthcare + AI expertise
+- **78 specialized medical templates** with advanced search, copy, and PDF capabilities
 - **HIPAA compliance** architecture from day one
 - **Multi-tenant security** with complete practice isolation
 - **Years of development** already invested
 - **Extensive medical knowledge base** built into the system
+- **190+ medical collections** covering 35+ specialties
 
 ---
 
@@ -247,12 +255,15 @@ We're looking for visionary investors and partners who understand that the futur
 
 ### **Built and Operational**
 
-✅ **900+ Healthcare Services** - Comprehensive operations coverage
-✅ **2000+ Medical Functions** - Continuously expanding
+✅ **128 Healthcare Services** - Comprehensive operations coverage
+✅ **2,000+ Medical Functions** - Continuously expanding
+✅ **78 Document Templates** - Specialized medical document renderers
+✅ **190+ Medical Collections** - Deep medical data organization
 ✅ **Conversational AI Engine** - Powered by Claude Sonnet 4.5
 ✅ **Multi-Tenant Architecture** - Enterprise-ready infrastructure
 ✅ **HIPAA Compliance Framework** - Security and privacy built-in
 ✅ **Dual Language Support** - Hebrew and English with RTL
+✅ **35+ Medical Specialties** - From cardiology to neurology to allergy/immunology
 
 ### **Development Roadmap**
 
